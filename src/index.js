@@ -80,11 +80,34 @@ function getKeyboardShortcut(intent, speechCallback) {
 /** returns the proper speech output */
 function getSpeechOutput(action, target) {
 
-	// if (error) {
-	// 	return "There was an error";
-	// }
+	var result;
 
-	var result = "You want the keyboard shortcut for " + action + " " + target + ", is that correct?";
+	if (process.env.VERBOSE_MODE === 'true') {
+		// Ask the user if the action/target pair were interpreted correctly
+		result = "You want the keyboard shortcut for " + action + " " + target + ", is that correct?";
+	} else {
+		// Lookup action/target pair in the data model
+		result = getShortcutForActionTargetPair(action, target);
+	}
+
+	return result;
+}
+
+/** does a data model lookup for the given key (action, target pair), if found, returns corresponding value */
+function getShortcutForActionTargetPair(action, target) {
+	var result = "I did not find any keyboard shortcuts for " + action + " " + target;
+	var actionTargetString = action + " " + target;
+
+	var dataModel = {
+		"say line": "INSERT + UP ARROW",
+		
+	};
+
+	Object.keys(dataModel).forEach(function (key) {
+		if (key === actionTargetString) {
+			result = "The keyboard shortcut for " + actionTargetString + " is" + dataModel[key];
+		}
+	});
 
 	return result;
 }
