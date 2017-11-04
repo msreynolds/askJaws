@@ -1,3 +1,11 @@
 KeyboardShortcutIntent What is the shortcut for {say|ActionName} {line|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {line|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {line|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {say|ActionName} {font|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {font|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {font|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {say|ActionName} {color|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {color|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {color|ActionTarget}

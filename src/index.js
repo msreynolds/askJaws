@@ -9,6 +9,11 @@
 'use strict';
 
 require('dotenv').load();
+
+var fs = require('fs');
+const util = require('util');
+var dataModel = require('./data/data.json');
+
 // var util = require('util'); // useful for debugging/printing json objects
 var Alexa = require('alexa-sdk');
 
@@ -48,6 +53,19 @@ var handlers = {
 	}
 };
 
+function loadDataModel() {
+	console.log('Attempting to load data model from disk');
+
+	// Load the data model from external file
+	fs.readFile('./data/data.json', 'utf8', function (err, data) {
+		if (err) {
+			console.log('Error reading data model: ' + err);
+			throw err;
+		}
+		return JSON.parse(data);
+	});
+}
+
 /**
  * Behavior Functions
  */
@@ -59,7 +77,7 @@ function getWelcomeResponse(speechCallback) {
 
 /** help response */
 function getHelpResponse(speechCallback) {
-	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for the keyboard shortcut for any operation.  What " + process.env.SKILL_CALL_SIGN + " operation would you like to know the keyboard for?";
+	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for the keyboard shortcut for any operation.";
 	speechCallback(':tell', speechOutput, getRepromptText());
 }
 
@@ -105,10 +123,7 @@ function getShortcutForActionTargetPair(action, target) {
 	// The keyboard shortcuts are different for desktop and laptop layouts
 	var layout = process.env.LAYOUT_MODE; // either 'desktop' or 'laptop'
 
-	var dataModel = {
-		"say line": "INSERT + UP ARROW",
-
-	};
+	//console.log('dataModel: ' + util.inspect(dataModel, {showHidden: false, depth: null}));
 
 	Object.keys(dataModel).forEach(function (key) {
 		if (key === actionTargetString) {
