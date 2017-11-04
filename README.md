@@ -38,6 +38,9 @@ AMAZON_ALEXA_APP_ID="amzn1.echo-sdk-ams.app.some-amazon-id"
 # Verbose Mode
 VERBOSE_MODE="false"
 
+# Layout Mode (desktop or laptop)
+LAYOUT_MODE="desktop"
+
 ```
 
 Build the zip file you will upload to Amazon Lambda Function Console, the zip file is stored in ```./dist/askIndigo.zip```:
