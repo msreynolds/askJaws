@@ -1,2 +1,3 @@
+KeyboardShortcutIntent What is the shortcut for {say|ActionName} {line|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {line|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {line|ActionTarget}
