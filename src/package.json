@@ -1,0 +1,21 @@
+{
+  "name": "askJaws",
+  "version": "1.0.0",
+  "description": "An Amazon Alexa Skill for the JAWS screen reader.  Ask JAWS for keyboard shortcuts for any action and target",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/msreynolds/askjaws.git"
+  },
+  "author": "msreynolds",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msreynolds/askJaws/issues"
+  },
+  "homepage": "https://github.com/msreynolds/askJaws",
+  "dependencies": {
+    "alexa-sdk": "^1.0.0",
+    "util": "0.10.3",
+    "dotenv": "^1.2.0"
+  }
+}

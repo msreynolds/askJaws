@@ -1,0 +1,1 @@
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {line|ActionTarget}
