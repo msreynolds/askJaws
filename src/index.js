@@ -95,12 +95,19 @@ function getSpeechOutput(action, target) {
 
 /** does a data model lookup for the given key (action, target pair), if found, returns corresponding value */
 function getShortcutForActionTargetPair(action, target) {
+
+	// Default result if no matching entry is found
 	var result = "I did not find any keyboard shortcuts for " + action + " " + target;
+
+	// Combine the action and target values to create a lookup key
 	var actionTargetString = action + " " + target;
+
+	// The keyboard shortcuts are different for desktop and laptop layouts
+	var layout = process.env.LAYOUT_MODE; // either 'desktop' or 'laptop'
 
 	var dataModel = {
 		"say line": "INSERT + UP ARROW",
-		
+
 	};
 
 	Object.keys(dataModel).forEach(function (key) {
