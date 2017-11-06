@@ -1,11 +1,45 @@
+KeyboardShortcutIntent What is the shortcut for {acquire image from|ActionName} {camera or scanner|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {acquire image from|ActionName} {camera or scanner|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {acquire image from|ActionName} {camera|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {acquire image from|ActionName} {camera|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {acquire image from|ActionName} {scanner|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {acquire image from|ActionName} {scanner|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {activate|ActionName} {mouse over|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {activate|ActionName} {mouse over|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {assign|ActionName} {custom label|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {assign|ActionName} {custom label|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {read|ActionName} {column|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {read|ActionName} {column|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {read|ActionName} {row|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {read|ActionName} {row|ActionTarget}
+
 KeyboardShortcutIntent What is the shortcut for {say|ActionName} {line|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {line|ActionTarget}
-KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {line|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {say|ActionName} {from cursor|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {from cursor|ActionTarget}
 
 KeyboardShortcutIntent What is the shortcut for {say|ActionName} {font|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {font|ActionTarget}
-KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {font|ActionTarget}
 
 KeyboardShortcutIntent What is the shortcut for {say|ActionName} {color|ActionTarget}
 KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {color|ActionTarget}
-KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} a {color|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {say|ActionName} {character|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {character|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {say|ActionName} {word|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {say|ActionName} {word|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {select|ActionName} {language|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {select|ActionName} {language|ActionTarget}
+
+KeyboardShortcutIntent What is the shortcut for {read|ActionName} {column|ActionTarget}
+KeyboardShortcutIntent What is the keyboard shortcut for {read|ActionName} {column|ActionTarget}
+
