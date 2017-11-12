@@ -7,20 +7,15 @@
  */
 
 {
-    "intents":
-    [
+  "intents": [
+    {
+      "intent": "KeyboardShortcutIntent",
+      "slots": [
         {
-            "intent": "KeyboardShortcutIntent",
-            "slots": [
-                {
-                    "name": "ActionName",
-                    "type": "LITERAL"
-                },
-                {
-                  "name": "ActionTarget",
-                  "type": "LITERAL"
-                }
-            ]
+          "name": "OperationName",
+          "type": "LITERAL"
         }
-    ]
+      ]
+    }
+  ]
 }
