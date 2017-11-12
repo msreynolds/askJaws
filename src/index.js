@@ -88,58 +88,54 @@ function getSpeechOutput(operation) {
 		// Ask the user if the action/target pair were interpreted correctly
 		result = "You want the keyboard shortcut for " + operation + ", is that correct?";
 	} else {
-		// Lookup action/target pair in the data model
-		result = getShortcutForOperation(operation);
+		// Lookup best match in the data model
+		result = getResponse(findClosestMatchingDescription(operation), operation);
 	}
 	return result;
 };
 
-/** does a data model lookup for the given key (action, target pair), if found, returns corresponding value */
-function getShortcutForOperation(operation) {
+/** does a data model lookup for the given key (operation), if found, returns corresponding value */
+function findClosestMatchingDescription(operation) {
 
-	// The keyboard shortcuts are different for desktop and laptop layouts
-	var layout = process.env.LAYOUT_MODE; // either 'desktop' or 'laptop'
-
-	//console.log('dataModel: ' + util.inspect(dataModel, {showHidden: false, depth: null}));
-
-	var exactMatchKey = null;
-	var substringMatchKeys = [];
+	var exactMatchDescription = null;
+	// var substringMatchDescriptions = [];
+	var shortestDistanceDescription = null;
 	var shortestDistance = operation.length;
-	var shortestDistanceKey = null;
 
-	Object.keys(dataModel).forEach(function (key) {
+	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.desktop) : (dataModel.laptop);
 
-		// Make a 'clean' key, aka remove all non-alpha numeric characters
-		var cleanKey = key.replace(/[\W_]+/g,'');
+	dataModelArray.forEach(function (item) {
+		// Make a 'clean' description, aka remove all non-alpha numeric characters
+		var cleanDescription = item.description.replace(/[\W_]+/g,'');
 
-		// Exact match of operation to key or cleanKey
-		if (key === operation || cleanKey === operation) {
+		// Exact match of operation to description or cleanDescription
+		if (item.description === operation || cleanDescription === operation) {
 			console.log('Exact Match Found!');
-			exactMatchKey = key;
+			exactMatchDescription = item.description;
 			return;
 		}
 
-		// Exact match of operation within a substring of key
-		var substringKeyMatches = key.match(new RegExp('/'+operation+'/g'));
-		if (substringKeyMatches && substringKeyMatches.length === 1) {
-			console.log('Substring Match Found in Key: ' + key);
-			substringMatchKeys.push(key);
-		}
+		// // Exact match of operation within a substring of key
+		// var substringKeyMatches = item.description.match(new RegExp('/'+operation+'/g'));
+		// if (substringKeyMatches && substringKeyMatches.length === 1) {
+		// 	console.log('Substring Match Found in Description: ' + item.description);
+		// 	substringMatchDescriptions.push(item.description);
+		// }
+		//
+		// // Exact match of operation within a substring of cleanDescription
+		// var substringCleanDescMatches = cleanDescription.match(new RegExp('/'+operation+'/g'));
+		// if (substringCleanDescMatches && substringCleanDescMatches.length === 1) {
+		// 	console.log('Substring Match Found in Clean Description: ' + cleanDescription);
+		// 	substringMatchDescriptions.push(item.description);
+		// }
 
-		// Exact match of operation within a substring of cleanKey
-		var substringCleanKeyMatches = cleanKey.match(new RegExp('/'+operation+'/g'));
-		if (substringCleanKeyMatches && substringCleanKeyMatches.length === 1) {
-			console.log('Substring Match Found in Cleaned Key: ' + cleanKey);
-			substringMatchKeys.push(key);
-		}
-
-		// Shortest Levenshtein Distance match between cleanKey and operation
-		var distance = getLevenshteinDistance(cleanKey, operation);
+		// Shortest Levenshtein Distance match between cleanDescription and operation
+		var distance = getLevenshteinDistance(cleanDescription, operation);
 		if (distance < shortestDistance) {
 			shortestDistance = distance;
 			console.log('Searching for: ' + operation);
-			console.log('Shorter Levenshtein Distance Match Found in Cleaned Key: ' + key + ' ' + distance);
-			shortestDistanceKey = key;
+			console.log('Shorter Levenshtein Distance Match Found in Clean Description: ' + item.description + ' - ' + distance);
+			shortestDistanceDescription = item.description;
 		}
 	});
 
@@ -149,24 +145,11 @@ function getShortcutForOperation(operation) {
 	// 3) always use the shortest distance match, if a distance shorter than the operation phrase length was found
 	// 4) else report that there was no match found
 
-	if (exactMatchKey){
-		// 1) always use exact match if it exists
-		return "The keyboard shortcut for " + exactMatchKey + " is " + dataModel[exactMatchKey];
-	}
-	else if (substringMatchKeys && substringMatchKeys.length > 0) {
-		// 2) always use the shortest distance on an exact substring match, if substring matches were found
-		var substringMatchKey = getShortestDistanceSubstringKey(substringMatchKeys, operation);
-		return "The keyboard shortcut for " + substringMatchKey + " is " + dataModel[substringMatchKey];
-	}
-	else if (shortestDistance < operation.length) {
-		// 3) always use the shortest distance match, if a distance shorter than the operation phrase length was found
-		return "The keyboard shortcut for " + shortestDistanceKey + " is " + dataModel[shortestDistanceKey];
-	}
-	else {
-		// 4) else report that there was no match found
-		return "I did not find any keyboard shortcuts for " + operation;
-	}
+	if (exactMatchDescription) return exactMatchDescription;
+	// if (substringMatchDescriptions.length > 0) return getShortestDistanceSubstringDescription(substringMatchDescriptions, operation);
+	if (shortestDistanceDescription) return shortestDistanceDescription;
 
+	return null;
 };
 
 // Credit: https://gist.github.com/andrei-m/982927
@@ -205,29 +188,55 @@ function getLevenshteinDistance(a, b){
 	return matrix[b.length][a.length];
 };
 
-function getShortestDistanceSubstringKey(substringMatchKeys, operation) {
-	var longestKeyLength = 0;
-	var shortestSubstringDistanceKey = null;
+// TODO: Test this method
+// function getShortestDistanceSubstringDescription(substringMatchDescriptions, operation) {
+// 	var longestKeyLength = 0;
+// 	var shortestSubstringDistanceKey = null;
+//
+// 	substringMatchDescriptions.forEach(function(substringMatchKey) {
+// 		if (substringMatchKey.length > longestKeyLength) {
+// 			// find the longest key
+// 			longestKeyLength = substringMatchKey.length;
+//
+// 			// set the default substring key to the longest key found
+// 			shortestSubstringDistanceKey = substringMatchKey;
+// 		}
+// 	});
+//
+// 	// Now try to find a key with a shorter Levenshtein distance to the original operation
+// 	var shortestSubstringDistance = longestKeyLength;
+// 	substringMatchDescriptions.forEach(function(substringMatchKey) {
+// 		var substringDistance = getLevenshteinDistance(substringMatchKey, operation);
+// 		if (substringDistance < shortestSubstringDistance) {
+// 			shortestSubstringDistance = substringDistance;
+// 			shortestSubstringDistanceKey = substringMatchKey;
+// 		}
+// 	});
+//
+// 	return shortestSubstringDistanceKey;
+// };
 
-	substringMatchKeys.forEach(function(substringMatchKey) {
-		if (substringMatchKey.length > longestKeyLength) {
-			// find the longest key
-			longestKeyLength = substringMatchKey.length;
+function getCommand(description) {
+	// The keyboard shortcuts are different for desktop and laptop layouts
+	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.laptop) : (dataModel.desktop);
 
-			// set the default substring key to the longest key found
-			shortestSubstringDistanceKey = substringMatchKey;
+	var result = null;
+	dataModelArray.forEach(function (item) {
+		if (description == item.description) {
+			result = item.command;
+			return;
 		}
 	});
-
-	// Now try to find a key with a shorter Levenshtein distance to the original operation
-	var shortestSubstringDistance = longestKeyLength;
-	substringMatchKeys.forEach(function(substringMatchKey) {
-		var substringDistance = getLevenshteinDistance(substringMatchKey, operation);
-		if (substringDistance < shortestSubstringDistance) {
-			shortestSubstringDistance = substringDistance;
-			shortestSubstringDistanceKey = substringMatchKey;
-		}
-	});
-
-	return shortestSubstringDistanceKey
+	return result;
 };
+
+function getResponse(description, operation) {
+
+	var command = getCommand(description);
+	if (command) {
+		return "The keyboard shortcut for " + description + " is " + command;
+	} else {
+		return "I did not find any keyboard shortcuts for " + operation;
+	}
+};
+

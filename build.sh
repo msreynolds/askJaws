@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd src
 npm install
 zip -r askJaws.zip . -x package.json
