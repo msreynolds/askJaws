@@ -572,8 +572,7 @@
       "description": "windows key help",
       "command": "INSERT+W"
     }
-  ]
-	{
+  ],
   "laptop": [
     {
       "description": "acquire image from camera or scanner",
