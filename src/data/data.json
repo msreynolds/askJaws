@@ -573,4 +573,1107 @@
       "command": "INSERT+W"
     }
   ]
+	{
+  "laptop": [
+    {
+      "description": "acquire image from camera or scanner",
+      "command": "CAPS LOCK+SPACEBAR, followed by O, and then A"
+    },
+    {
+      "description": "activate mouse over",
+      "command": "INSERT+CTRL+ENTER"
+    },
+    {
+      "description": "add, delete, edit, or rename permanent placemarkers",
+      "command": "CTRL+SHIFT+K"
+    },
+    {
+      "description": "advanced navigation",
+      "command": "CAPS LOCK+A"
+    },
+    {
+      "description": "announce help message for mouse echo commands",
+      "command": "CAPS LOCK+SPACEBAR, followed by E, and then QUESTION MARK"
+    },
+    {
+      "description": "announce help message for ocr commands",
+      "command": "CAPS LOCK+SPACEBAR, followed by O, and then QUESTION MARK"
+    },
+    {
+      "description": "announce progress bar status",
+      "command": "CAPS LOCK+TAB"
+    },
+    {
+      "description": "aria drag-and-drop",
+      "command": "WINDOWS Key+CTRL+EQUALS"
+    },
+    {
+      "description": "aria live region text filter",
+      "command": "WINDOWS Key+CTRL+DASH"
+    },
+    {
+      "description": "assign custom label",
+      "command": "CTRL+INSERT+TAB"
+    },
+    {
+      "description": "auto graphics labeler",
+      "command": "CAPS LOCK+CTRL+G"
+    },
+    {
+      "command": "ALT",
+      "description": "cancel or close a menu"
+    },
+    {
+      "command": "ESC",
+      "description": "cancel recognition while in progress"
+    },
+    {
+      "command": "CAPS LOCK+SPACEBAR, followed by O, and then Q",
+      "description": "cell above in column"
+    },
+    {
+      "command": "ALT+CTRL+UP ARROW",
+      "description": "cell below in column"
+    },
+    {
+      "command": "ALT+CTRL+DOWN ARROW",
+      "description": "change skim reading preferences"
+    },
+    {
+      "command": "CAPS LOCK+CTRL+SHIFT+DOWN ARROW",
+      "description": "choose a menu item"
+    },
+    {
+      "command": "ENTER",
+      "description": "close a child window"
+    },
+    {
+      "command": "CTRL+F4",
+      "description": "close all tabs"
+    },
+    {
+      "command": "ALT+F4",
+      "description": "close combo box"
+    },
+    {
+      "command": "ALT+UP ARROW",
+      "description": "close current tab"
+    },
+    {
+      "command": "CTRL+W or CTRL+F4",
+      "description": "close other tabs"
+    },
+    {
+      "command": "CTRL+ALT+F4",
+      "description": "context sensitive help"
+    },
+    {
+      "command": "CAPS LOCK+F1",
+      "description": "copy"
+    },
+    {
+      "command": "CTRL+C",
+      "description": "copy selected text to fsclipboard"
+    },
+    {
+      "command": "CAPS LOCK+WINDOWS Key+C",
+      "description": "cut"
+    },
+    {
+      "command": "CTRL+X",
+      "description": "cycle through element navigation types"
+    },
+    {
+      "description": "delete current character",
+      "command": "DELETE"
+    },
+    {
+      "command": "DELETE",
+      "description": "delete files"
+    },
+    {
+      "description": "delete prior character",
+      "command": "BACKSPACE"
+    },
+    {
+      "description": "display detailed element information",
+      "command": "CTRL+SHIFT+INSERT+F1"
+    },
+    {
+      "description": "display entire element",
+      "command": "SHIFT+INSERT+F1"
+    },
+    {
+      "description": "drag and drop",
+      "command": "CAPS LOCK+CTRL+8"
+    },
+    {
+      "description": "end jaws tandem session",
+      "command": "INSERT+ALT+T"
+    },
+    {
+      "command": "INSERT+ALT+T",
+      "description": "ends jaws tandem session"
+    },
+    {
+      "command": "ENTER",
+      "description": "enter forms mode"
+    },
+    {
+      "description": "exit forms mode",
+      "command": "NUM PAD PLUS"
+    },
+    {
+      "description": "fast forward during say all",
+      "command": "RIGHT ARROW"
+    },
+    {
+      "description": "file or folder",
+      "command": "F5"
+    },
+    {
+      "description": "find file or folder from desktop",
+      "command": "F3"
+    },
+    {
+      "description": "first element",
+      "command": "CTRL+HOME"
+    },
+    {
+      "description": "first form field",
+      "command": "INSERT+CTRL+HOME"
+    },
+    {
+      "description": "frame get bottom right",
+      "command": "CTRL+SHIFT+RIGHT BRACKET"
+    },
+    {
+      "command": "CTRL+SHIFT+LEFT BRACKET",
+      "description": "frame set to window"
+    },
+    {
+      "command": "CTRL+SHIFT+LEFT BRACKET twice quickly",
+      "description": "get application version"
+    },
+    {
+      "command": "LOCK+CTRL+V",
+      "description": "get help"
+    },
+    {
+      "command": "F1",
+      "description": "go back a page"
+    },
+    {
+      "command": "ALT+LEFT ARROW or BACKSPACE",
+      "description": "go forward a page"
+    },
+    {
+      "command": "ALT+RIGHT ARROW",
+      "description": "go up one level"
+    },
+    {
+      "command": "BACKSPACE",
+      "description": "graphics labeler"
+    },
+    {
+      "command": "CAPS LOCK+G",
+      "description": "heading at level"
+    },
+    {
+      "command": "1 through 6",
+      "description": "hot key help"
+    },
+    {
+      "command": "CAPS LOCK+CTRL+SHIFT+H",
+      "description": "increase voice rate during say all"
+    },
+    {
+      "command": "PAGE DOWN",
+      "description": "interrupt speech"
+    },
+    {
+      "command": "CTRL",
+      "description": "jaws command search"
+    },
+    {
+      "command": "CAPS LOCK+SPACEBAR, followed by J",
+      "description": "jaws cursor"
+    },
+    {
+      "command": "CAPS LOCK+P",
+      "description": "jaws find"
+    },
+    {
+      "command": "CAPS LOCK+CTRL+F",
+      "description": "jaws find next"
+    },
+    {
+      "command": "CAPS LOCK+F3",
+      "description": "jaws find next and previous"
+    },
+    {
+      "description": "jaws find previous",
+      "command": "CAPS LOCK+SHIFT+F3"
+    },
+    {
+      "description": "jaws help for applications",
+      "command": "CAPS LOCK+F1 twice quickly"
+    },
+    {
+      "description": "jaws window",
+      "command": "CAPS LOCK+CTRL+SHIFT+J"
+    },
+    {
+      "command": "CAPS LOCK+CTRL+SHIFT+J",
+      "description": "jaws window"
+    },
+    {
+      "description": "jump to table cell",
+      "command": "CTRL+WINDOWS KEY+J"
+    },
+    {
+      "description": "last element",
+      "command": "CTRL+END"
+    },
+    {
+      "description": "last form field",
+      "command": "INSERT+CTRL+END"
+    },
+    {
+      "description": "launch research it using the primary lookup source",
+      "command": "CAPS LOCK+WINDOWS Key+R"
+    },
+    {
+      "description": "left mouse button",
+      "command": "CAPS LOCK+8"
+    },
+    {
+      "description": "list buttons",
+      "command": "CTRL+INSERT+B"
+    },
+    {
+      "description": "list check boxes",
+      "command": "CTRL+INSERT+X"
+    },
+    {
+      "description": "list combo boxes",
+      "command": "CTRL+INSERT+C"
+    },
+    {
+      "description": "list edit boxes",
+      "command": "CTRL+INSERT+E"
+    },
+    {
+      "description": "list form fields",
+      "command": "INSERT+F5"
+    },
+    {
+      "description": "list frames",
+      "command": "INSERT+F9"
+    },
+    {
+      "description": "list headings",
+      "command": "INSERT+F6"
+    },
+    {
+      "command": "INSERT+SPACEBAR, followed by T, and then QUESTION MARK",
+      "description": "list links"
+    },
+    {
+      "command": "INSERT+F7",
+      "description": "list radio buttons"
+    },
+    {
+      "command": "CTRL+INSERT+A",
+      "description": "minimize all applications"
+    },
+    {
+      "command": "WINDOWS KEY+M",
+      "description": "move backward through dialog controls"
+    },
+    {
+      "command": "SHIFT+TAB",
+      "description": "move between menus"
+    },
+    {
+      "command": "ALT, ARROW KEYS",
+      "description": "move one character left"
+    },
+    {
+      "command": "LEFT ARROW",
+      "description": "move one character right"
+    },
+    {
+      "command": "RIGHT ARROW",
+      "description": "move one paragraph down"
+    },
+    {
+      "command": "CTRL+DOWN ARROW",
+      "description": "move one paragraph up"
+    },
+    {
+      "command": "CTRL+UP ARROW",
+      "description": "move one word left"
+    },
+    {
+      "command": "CTRL+LEFT ARROW",
+      "description": "move one word right"
+    },
+    {
+      "command": "CTRL+RIGHT ARROW",
+      "description": "move through dialog controls"
+    },
+    {
+      "command": "TAB",
+      "description": "move to another page"
+    },
+    {
+      "command": "CTRL+TAB",
+      "description": "move to beginning"
+    },
+    {
+      "command": "CTRL+HOME",
+      "description": "move to beginning of line"
+    },
+    {
+      "command": "ALT",
+      "description": "move to current application’s menu bar"
+    },
+    {
+      "command": "CTRL+END",
+      "description": "move to end"
+    },
+    {
+      "description": "move to end of line",
+      "command": "END"
+    },
+    {
+      "description": "move to main region",
+      "command": "Q"
+    },
+    {
+      "description": "move to placemarker",
+      "command": "1 through 4"
+    },
+    {
+      "description": "move to the next or prior placemarker",
+      "command": "K or SHIFT+K"
+    },
+    {
+      "description": "next button",
+      "command": "B"
+    },
+    {
+      "description": "next cell in row",
+      "command": "ALT+CTRL+RIGHT ARROW"
+    },
+    {
+      "description": "next check box",
+      "command": "X"
+    },
+    {
+      "description": "next clickable element",
+      "command": "SLASH*"
+    },
+    {
+      "description": "next column",
+      "command": "WINDOWS KEY+ALT+RIGHT ARROW"
+    },
+    {
+      "description": "next combo box",
+      "command": "C"
+    },
+    {
+      "description": "next different element",
+      "command": "D"
+    },
+    {
+      "description": "next edit box",
+      "command": "E"
+    },
+    {
+      "description": "next element",
+      "command": "RIGHT ARROW or TAB"
+    },
+    {
+      "description": "next element by type",
+      "command": "DOWN ARROW"
+    },
+    {
+      "description": "next form field",
+      "command": "F"
+    },
+    {
+      "command": "M",
+      "description": "next heading"
+    },
+    {
+      "command": "H",
+      "description": "next item in a list"
+    },
+    {
+      "command": "I",
+      "description": "next link"
+    },
+    {
+      "command": "TAB",
+      "description": "next mouse over element"
+    },
+    {
+      "command": "SEMICOLON*",
+      "description": "next object tag"
+    },
+    {
+      "command": "O",
+      "description": "next radio button"
+    },
+    {
+      "command": "A",
+      "description": "next row"
+    },
+    {
+      "command": "WINDOWS KEY+ALT+DOWN ARROW",
+      "description": "next same element"
+    },
+    {
+      "command": "S",
+      "description": "next separator"
+    },
+    {
+      "command": "DASH",
+      "description": "next table"
+    },
+    {
+      "command": "T",
+      "description": "next unvisited link"
+    },
+    {
+      "command": "U",
+      "description": "next visited link"
+    },
+    {
+      "command": "V",
+      "description": "number row keys"
+    },
+    {
+      "command": "7 through 0",
+      "description": "open a child window control menu"
+    },
+    {
+      "command": "ALT+DASH",
+      "description": "open a new tab"
+    },
+    {
+      "command": "CTRL+T",
+      "description": "open a new tab from the address bar"
+    },
+    {
+      "description": "open combo box",
+      "command": "ALT+DOWN ARROW"
+    },
+    {
+      "description": "open flexible web wizard",
+      "command": "INSERT+SPACEBAR followed by X"
+    },
+    {
+      "command": "ENTER",
+      "description": "open link"
+    },
+    {
+      "description": "open links in a new tab in the background",
+      "command": "CTRL+ENTER"
+    },
+    {
+      "description": "open links in a new tab in the foreground",
+      "command": "CTRL+SHIFT+ENTER"
+    },
+    {
+      "description": "open properties for selected",
+      "command": "ALT+ENTER"
+    },
+    {
+      "description": "open research it",
+      "command": "CAPS LOCK+SPACEBAR, followed by R"
+    },
+    {
+      "description": "open run dialog",
+      "command": "WINDOWS KEY+R"
+    },
+    {
+      "description": "open the application control menu",
+      "command": "ALT+SPACEBAR"
+    },
+    {
+      "description": "open the context menu",
+      "command": "APPLICATIONS KEY or SHIFT+F10"
+    },
+    {
+      "description": "open the start menu",
+      "command": "CTRL+ESC"
+    },
+    {
+      "description": "open windows explorer",
+      "command": "WINDOWS KEY+E"
+    },
+    {
+      "description": "pass key through",
+      "command": "CAPS LOCK+3"
+    },
+    {
+      "description": "paste",
+      "command": "CTRL+V"
+    },
+    {
+      "description": "pc cursor",
+      "command": "CAPS LOCK+SEMICOLON"
+    },
+    {
+      "description": "permanently decrease voice rate when not in say all",
+      "command": "ALT+WINDOWS Key+CTRL+PAGE DOWN"
+    },
+    {
+      "command": "ALT+WINDOWS Key+CTRL+PAGE UP",
+      "description": "previous element"
+    },
+    {
+      "command": "SHIFT+COMMA",
+      "description": "prior button"
+    },
+    {
+      "command": "SHIFT+B",
+      "description": "prior cell in row"
+    },
+    {
+      "command": "ALT+CTRL+LEFT ARROW",
+      "description": "prior check box"
+    },
+    {
+      "command": "SHIFT+X",
+      "description": "prior column"
+    },
+    {
+      "command": "WINDOWS KEY+ALT+LEFT ARROW",
+      "description": "prior combo box"
+    },
+    {
+      "command": "SHIFT+C",
+      "description": "prior different element"
+    },
+    {
+      "command": "SHIFT+D",
+      "description": "prior edit box"
+    },
+    {
+      "command": "SHIFT+E",
+      "description": "prior element"
+    },
+    {
+      "command": "LEFT ARROW or SHIFT+TAB",
+      "description": "SHIFT+COMMA"
+    },
+    {
+      "command": "prior element by type",
+      "description": "UP ARROW"
+    },
+    {
+      "command": "prior form field",
+      "description": "SHIFT+F"
+    },
+    {
+      "command": "prior frame",
+      "description": "SHIFT+M"
+    },
+    {
+      "command": "prior link",
+      "description": "SHIFT+TAB"
+    },
+    {
+      "command": "prior radio button",
+      "description": "SHIFT+A"
+    },
+    {
+      "command": "prior row",
+      "description": "WINDOWS KEY+ALT+UP ARROW"
+    },
+    {
+      "description": "SHIFT+S",
+      "command": "prior table"
+    },
+    {
+      "description": "SHIFT+T",
+      "command": "quick settings"
+    },
+    {
+      "description": "CAPS LOCK+V",
+      "command": "quit the active application"
+    },
+    {
+      "description": "ALT+F4",
+      "command": "read address bar"
+    },
+    {
+      "description": "INSERT+A",
+      "command": "read clipboard contents"
+    },
+    {
+      "description": "WINDOWS KEY+CAPS LOCK+X",
+      "command": "read column"
+    },
+    {
+      "description": "WINDOWS KEY+PERIOD",
+      "command": "read columns 1 through 10 of a list view"
+    },
+    {
+      "description": "CAPS LOCK+CTRL+n, where n is a value from 1, 2, 3, through 0",
+      "command": "read row"
+    },
+    {
+      "description": "WINDOWS KEY+COMMA or WINDOWS KEY+NUM PAD 5",
+      "command": "read text at placemarkers"
+    },
+    {
+      "description": "1 through 4",
+      "command": "read window from top to bottom"
+    },
+    {
+      "description": "CAPS LOCK+B",
+      "command": "read word in context"
+    },
+    {
+      "description": "CAPS LOCK+C",
+      "command": "recognize current application window"
+    },
+    {
+      "description": "CAPS LOCK+SPACEBAR, followed by O, and then W",
+      "command": "recognize current pdf document"
+    },
+    {
+      "description": "CAPS LOCK+SPACEBAR, followed by O, and then D",
+      "command": "recognize currently selected control"
+    },
+    {
+      "description": "CAPS LOCK+SPACEBAR, followed by O, and then C",
+      "command": "recognize currently selected image file"
+    },
+    {
+      "description": "CAPS LOCK+SPACEBAR, followed by O, and then F",
+      "command": "recognize entire screen"
+    },
+    {
+      "command": "refresh a window",
+      "description": "F5"
+    },
+    {
+      "command": "refresh screen",
+      "description": "CAPS LOCK+ESC"
+    },
+    {
+      "command": "rename a file or folder",
+      "description": "F2"
+    },
+    {
+      "command": "restrict jaws cursor",
+      "description": "CAPS LOCK+R"
+    },
+    {
+      "command": "return to placemarker in word",
+      "description": "ALT+WINDOWS Key+K"
+    },
+    {
+      "command": "return to previous cell",
+      "description": "CTRL+WINDOWS KEY+SHIFT+J"
+    },
+    {
+      "command": "reverse direction through pages",
+      "description": "CTRL+SHIFT+TAB"
+    },
+    {
+      "command": "rewind during say all",
+      "description": "LEFT ARROW"
+    },
+    {
+      "command": "right mouse button",
+      "description": "CAPS LOCK+9"
+    },
+    {
+      "command": "route jaws cursor to pc cursor",
+      "description": "CAPS LOCK+LEFT BRACKET"
+    },
+    {
+      "command": "route jaws cursor to touch cursor",
+      "description": "CAPS LOCK+SHIFT+LEFT BRACKET"
+    },
+    {
+      "command": "route pc cursor to jaws cursor",
+      "description": "CAPS LOCK+APOSTROPHE"
+    },
+    {
+      "description": "CAPS LOCK+APOSTROPHE",
+      "command": "route touch cursor to focused element"
+    },
+    {
+      "command": "route touch cursor to jaws cursor",
+      "description": "CAPS LOCK+SHIFT+APOSTROPHE"
+    },
+    {
+      "command": "run jaws manager",
+      "description": "CAPS LOCK+F2"
+    },
+    {
+      "command": "say all",
+      "description": "CAPS LOCK+A"
+    },
+    {
+      "description": "CAPS LOCK+DOWN ARROW",
+      "command": "say bottom line of window"
+    },
+    {
+      "description": "CAPS LOCK+SHIFT+N",
+      "command": "say character"
+    },
+    {
+      "description": "CAPS LOCK+COMMA",
+      "command": "say character phonetically"
+    },
+    {
+      "description": "CAPS LOCK+COMMA twice quickly",
+      "command": "say color"
+    },
+    {
+      "description": "CAPS LOCK+5",
+      "command": "say current control hot key"
+    },
+    {
+      "description": "CAPS LOCK+SHIFT+COMMA",
+      "command": "say current element"
+    },
+    {
+      "description": "CAPS LOCK+I",
+      "command": "say default button of dialog box"
+    },
+    {
+      "description": "CAPS LOCK+E",
+      "command": "say font"
+    },
+    {
+      "description": "CAPS LOCK+F",
+      "command": "say from cursor"
+    },
+    {
+      "description": "CAPS LOCK+SHIFT+L",
+      "command": "say line"
+    },
+    {
+      "description": "CAPS LOCK+I",
+      "command": "say next character"
+    },
+    {
+      "description": "CAPS LOCK+PERIOD",
+      "command": "say next line"
+    },
+    {
+      "description": "CAPS LOCK+O",
+      "command": "say next paragraph"
+    },
+    {
+      "description": "CAPS LOCK+CTRL+O",
+      "command": "say next sentence"
+    },
+    {
+      "description": "CAPS LOCK+N",
+      "command": "say next word"
+    },
+    {
+      "description": "CAPS LOCK+L",
+      "command": "say paragraph"
+    },
+    {
+      "command": "say prior character",
+      "description": "CAPS LOCK+M"
+    },
+    {
+      "command": "say prior line",
+      "description": "CAPS LOCK+U"
+    },
+    {
+      "command": "say prior paragraph",
+      "description": "CAPS LOCK+CTRL+U"
+    },
+    {
+      "command": "say prior sentence",
+      "description": "CAPS LOCK+Y"
+    },
+    {
+      "command": "say prior word",
+      "description": "CAPS LOCK+J"
+    },
+    {
+      "command": "say selected text",
+      "description": "CAPS LOCK+SHIFT+A"
+    },
+    {
+      "command": "say sentence",
+      "description": "CAPS LOCK+H"
+    },
+    {
+      "command": "say system time",
+      "description": "CAPS LOCK+F12"
+    },
+    {
+      "command": "say to cursor",
+      "description": "CAPS LOCK+SHIFT+J"
+    },
+    {
+      "command": "say top line of window",
+      "description": "CAPS LOCK+SHIFT+Y"
+    },
+    {
+      "command": "say window prompt and text",
+      "description": "CAPS LOCK+TAB"
+    },
+    {
+      "command": "say window title",
+      "description": "CAPS LOCK+T"
+    },
+    {
+      "command": "say word",
+      "description": "CAPS LOCK+K"
+    },
+    {
+      "command": "scroll down one screen",
+      "description": "PAGE DOWN"
+    },
+    {
+      "command": "scroll up one screen",
+      "description": "PAGE UP"
+    },
+    {
+      "command": "select a system tray icon dialog",
+      "description": "CAPS LOCK+F11"
+    },
+    {
+      "description": "CTRL+A",
+      "command": "select entire element"
+    },
+    {
+      "description": "F8",
+      "command": "select language"
+    },
+    {
+      "description": "CTRL+WINDOWS Key+L",
+      "command": "select one character left"
+    },
+    {
+      "description": "SHIFT+LEFT ARROW",
+      "command": "select one character right"
+    },
+    {
+      "description": "SHIFT+RIGHT ARROW",
+      "command": "select one word left"
+    },
+    {
+      "description": "CTRL+SHIFT+LEFT ARROW",
+      "command": "select one word right"
+    },
+    {
+      "description": "CTRL+SHIFT+RIGHT ARROW",
+      "command": "select or deselect in list view"
+    },
+    {
+      "description": "SPACEBAR or CTRL+SPACEBAR",
+      "command": "select scheme"
+    },
+    {
+      "description": "ALT+CAPS LOCK+S",
+      "command": "select table"
+    },
+    {
+      "description": "F8",
+      "command": "select text from placemarker to cursor position"
+    },
+    {
+      "description": "INSERT+SPACEBAR followed by M",
+      "command": "select to beginning"
+    },
+    {
+      "description": "CTRL+SHIFT+HOME",
+      "command": "select to beginning of line"
+    },
+    {
+      "description": "SHIFT+HOME",
+      "command": "select to end"
+    },
+    {
+      "description": "CTRL+SHIFT+END",
+      "command": "select to end of line"
+    },
+    {
+      "description": "SHIFT+END",
+      "command": "select voice profile"
+    },
+    {
+      "description": "CAPS LOCK+CTRL+S",
+      "command": "set temporary placemarker (permanent marker for word)"
+    },
+    {
+      "command": "shift+ number row keys",
+      "description": "7 through 0"
+    },
+    {
+      "command": "show speech history",
+      "description": "CAPS LOCK+SPACEBAR followed by H"
+    },
+    {
+      "command": "shut down jaws",
+      "description": "CAPS LOCK+F4"
+    },
+    {
+      "command": "skip past links",
+      "description": "N"
+    },
+    {
+      "command": "speak character",
+      "description": "CAPS LOCK+SPACEBAR, followed by E, and then C"
+    },
+    {
+      "command": "speak line",
+      "description": "CAPS LOCK+SPACEBAR, followed by E, and then L"
+    },
+    {
+      "command": "speak paragraph",
+      "description": "CAPS LOCK+SPACEBAR, followed by E, and then P"
+    },
+    {
+      "command": "speak word",
+      "description": "CAPS LOCK+SPACEBAR, followed by E, and then W"
+    },
+    {
+      "command": "speech on and off",
+      "description": "CAPS LOCK+SPACEBAR, followed by S"
+    },
+    {
+      "command": "spell line",
+      "description": "CAPS LOCK+I twice"
+    },
+    {
+      "command": "spell word",
+      "description": "CAPS LOCK+K twice quickly"
+    },
+    {
+      "command": "start skim reading",
+      "description": "CAPS LOCK+CTRL+DOWN ARROW"
+    },
+    {
+      "command": "switch between open applications",
+      "description": "ALT+TAB"
+    },
+    {
+      "command": "switch between panes",
+      "description": "TAB and SHIFT+TAB"
+    },
+    {
+      "command": "switch to a specific tab number",
+      "description": "CTRL+n, where n is a digit from 1 through 8"
+    },
+    {
+      "command": "switch to last tab",
+      "description": "CTRL+9"
+    },
+    {
+      "description": "CTRL+TAB",
+      "command": "switch to the previous tab"
+    },
+    {
+      "description": "CTRL+SHIFT+TAB",
+      "command": "temporarily decrease voice rate when not in say all"
+    },
+    {
+      "description": "ALT+CTRL+PAGE DOWN",
+      "command": "temporarily increase voice rate when not in say all"
+    },
+    {
+      "description": "ALT+CTRL+PAGE UP",
+      "command": "temporarily toggle smart"
+    },
+    {
+      "description": "INSERT+X",
+      "command": "text review"
+    },
+    {
+      "description": "CAPS LOCK+ENTER",
+      "command": "toggle a check box on/off"
+    },
+    {
+      "description": "SPACEBAR",
+      "command": "toggle audio ducking"
+    },
+    {
+      "description": "CAPS LOCK+SPACEBAR followed by D",
+      "command": "toggle audio ducking (windows 8.1 and later)"
+    },
+    {
+      "description": "CAPS LOCK+SPACEBAR followed by D",
+      "command": "toggle between target and controller desktop"
+    },
+    {
+      "description": "INSERT+ALT+TAB",
+      "command": "toggle between target and controller desktop (controller user only)"
+    },
+    {
+      "description": "INSERT+ALT+TAB",
+      "command": "toggle default mode (used for troubleshooting)"
+    },
+    {
+      "description": "CAPS LOCK+SPACEB",
+      "command": "CAPS LOCK+SPACEBAR followed by z"
+    },
+    {
+      "description": "toggle mouse echo",
+      "command": "CAPS LOCK+SPACEBAR, followed by E, and then O"
+    },
+    {
+      "description": "toggle speech on and off",
+      "command": "CAPS LOCK+SPACEBAR, followed by S"
+    },
+    {
+      "description": "toggle video on or off on controller",
+      "command": "INSERT+CTRL+SHIFT+V"
+    },
+    {
+      "command": "INSERT+CTRL+SHIFT+V",
+      "description": "toggle video on or off on controller (controller user only)"
+    },
+    {
+      "command": "CAPS LOCK+SHIFT+SEMICOLON",
+      "description": "undo"
+    },
+    {
+      "command": "CTRL+Z",
+      "description": "virtual html features"
+    },
+    {
+      "command": "INSERT+F3",
+      "description": "virtualize clipboard contents"
+    },
+    {
+      "command": "CAPS LOCK+SPACEBAR followed by C",
+      "description": "virtualize current control"
+    },
+    {
+      "command": "ALT+CAPS LOCK+SHIFT+W",
+      "description": "ALT+CAPS+LOCK+SHIFT+W"
+    },
+    {
+      "command": "virtualize window",
+      "description": "ALT+CAPS LOCK+W"
+    },
+    {
+      "command": "window list dialog",
+      "description": "CAPS LOCK+F10"
+    },
+    {
+      "command": "windows key help",
+      "description": "CAPS LOCK+W"
+    }
+  ]
 }
