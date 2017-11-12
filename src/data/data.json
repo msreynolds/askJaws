@@ -1,202 +1,576 @@
 {
-	"acquire image from camera or scanner": "INSERT+SPACEBAR, followed by O, and then A",
-	"activate mouse over": "INSERT+CTRL+ENTER",
-	"add, delete, edit, or rename permanent placemarkers": "CTRL+SHIFT+K",
-	"announce help message for ocr commands": "INSERT+SPACEBAR, followed by O, and then QUESTION MARK",
-	"announce progress bar status": "INSERT+TAB",
-	"aria drag-and-drop": "WINDOWS Key+CTRL+EQUALS",
-	"aria live region text filter": "WINDOWS Key+CTRL+DASH",
-	"assign custom label": "CTRL+INSERT+TAB",
-	"auto graphics labeler": "CTRL+INSERT+G",
-	"cancel recognition while in progress": "INSERT+SPACEBAR, followed by O, and then Q",
-	"cell above in column": "ALT+CTRL+UP ARROW",
-	"cell below in column": "ALT+CTRL+DOWN ARROW",
-	"change skim reading preferences": "CTRL+SHIFT+INSERT+DOWN ARROW",
-	"close all tabs": "ALT+F4",
-	"close combo box": "ALT+UP ARROW",
-	"close current tab": "CTRL+W or CTRL+F4",
-	"close other tabs": "CTRL+ALT+F4",
-	"context sensitive help": "INSERT+F1",
-	"copy selected text to fsclipboard": "INSERT+WINDOWS Key+C",
-	"display detailed element information": "CTRL+SHIFT+INSERT+F1",
-	"display entire element": "SHIFT+INSERT+F1",
-	"drag and drop": "CTRL+INSERT+NUM PAD SLASH",
-	"ends jaws tandem session": "INSERT+ALT+T",
-	"enter forms mode": "ENTER",
-	"exit forms mode": "NUM PAD PLUS",
-	"fast forward during say all": "RIGHT ARROW",
-	"first form field": "INSERT+CTRL+HOME",
-	"frame get bottom right": "CTRL+SHIFT+RIGHT BRACKET",
-	"frame get top left": "CTRL+SHIFT+LEFT BRACKET",
-	"frame set to window": "CTRL+SHIFT+LEFT BRACKET twice quickly",
-	"get application version": "CTRL+INSERT+V CAPS",
-	"go back a page ": "ALT+LEFT ARROW or BACKSPACE",
-	"go forward a page ": "ALT+RIGHT ARROW",
-	"graphics labeler": "INSERT+G",
-	"heading at level": "1 through 6",
-	"hot key help": "INSERT+H",
-	"increase voice rate during say all": "PAGE DOWN",
-	"interrupt speech": "CTRL",
-	"jaws command search": "INSERT+SPACEBAR, followed by J",
-	"jaws cursor": "NUM PAD MINUS",
-	"jaws find next ": "INSERT+F3",
-	"jaws find next and previous": "F3 and SHIFT+F3",
-	"jaws find previous": "INSERT+SHIFT+F3",
-	"jaws find": "CTRL+INSERT+F ",
-	"jaws help for applications": "INSERT+F1 twice quickly",
-	"jaws window ": "INSERT+J",
-	"jump to table cell ": "CTRL+WINDOWS KEY+J",
-	"last form field": "INSERT+CTRL+END",
-	"launch research it using the primary lookup source": "INSERT+WINDOWS Key+R",
-	"left mouse button": "NUM PAD SLASH",
-	"list buttons": "CTRL+INSERT+B",
-	"list check boxes": "CTRL+INSERT+X",
-	"list combo boxes": "CTRL+INSERT+C",
-	"list edit boxes": "CTRL+INSERT+E",
-	"list form fields": "INSERT+F5",
-	"list frames": "INSERT+F9",
-	"list headings": "INSERT+F6",
-	"list keystrokes for table navigation": "INSERT+SPACEBAR, followed by T, and then QUESTION MARK",
-	"list links": "INSERT+F7",
-	"list radio buttons": "CTRL+INSERT+A",
-	"move to main region": "Q",
-	"move to placemarker": "1 through 4",
-	"move to the next or prior placemarker": "K or SHIFT+K",
-	"next button": "B",
-	"next cell in row": "ALT+CTRL+RIGHT ARROW",
-	"next check box": "X",
-	"next clickable element": "SLASH*",
-	"next column": "WINDOWS KEY+ALT+RIGHT ARROW",
-	"next combo box": "C",
-	"next different element": "D",
-	"next edit box": "E",
-	"next element": "SHIFT+PERIOD",
-	"next form field": "F",
-	"next frame": "M",
-	"next heading": "H",
-	"next item in a list": "I",
-	"next link": "TAB",
-	"next mouse over element": "SEMICOLON*",
-	"next object tag": "O",
-	"next radio button": "A",
-	"next row": "WINDOWS KEY+ALT+DOWN ARROW",
-	"next same element": "S",
-	"next separator": "DASH",
-	"next table": "T",
-	"next unvisited link": "U",
-	"next visited link": "V",
-	"number row keys": "7 through 0",
-	"open a new tab from the address bar": "ALT+ENTER (on address bar)",
-	"open a new tab": "CTRL+T",
-	"open combo box": "ALT+DOWN ARROW",
-	"open flexible web wizard": "INSERT+SPACEBAR followed by X ",
-	"open link": "ENTER",
-	"open links in a new tab in the background": "CTRL+ENTER",
-	"open links in a new tab in the foreground": "CTRL+SHIFT+ENTER",
-	"open research it": "INSERT+SPACEBAR, followed by R",
-	"pass key through": "Pass Key Through INSERT+3 on the numbers row",
-	"pc cursor": "NUM PAD PLUS",
-	"permanently decrease voice rate when not in say all": "ALT+WINDOWS Key+CTRL+PAGE DOWN",
-	"permanently increase voice rate when not in say all": "ALT+WINDOWS Key+CTRL+PAGE UP",
-	"previous element": "SHIFT+COMMA ",
-	"prior button": "SHIFT+B",
-	"prior cell in row": "ALT+CTRL+LEFT ARROW",
-	"prior check box": "SHIFT+X",
-	"prior column": "WINDOWS KEY+ALT+LEFT ARROW",
-	"prior combo box": "SHIFT+C",
-	"prior different element": "SHIFT+D",
-	"prior edit box": "SHIFT+E",
-	"prior element": "SHIFT+COMMA",
-	"prior form field": "SHIFT+F",
-	"prior frame": "SHIFT+M",
-	"prior link ": "SHIFT+TAB",
-	"prior radio button": "SHIFT+A",
-	"prior row": "WINDOWS KEY+ALT+UP ARROW",
-	"prior same element": "SHIFT+S",
-	"prior table": "SHIFT+T",
-	"quick settings": "INSERT+V",
-	"read address bar": " INSERT+A",
-	"read column": "WINDOWS KEY+PERIOD",
-	"read columns 1 through 10 of a list view": "CTRL+INSERT+n, where n is a value from 1, 2, 3 through 0 ",
-	"read row": "WINDOWS KEY+COMMA or WINDOWS KEY+NUM PAD 5",
-	"read text at placemarkers": "1 through 4",
-	"read window from top to bottom": "INSERT+B",
-	"read word in context": "INSERT+C",
-	"recognize current application window": "INSERT+SPACEBAR, followed by O, and then W",
-	"recognize current pdf document": "INSERT+SPACEBAR, followed by O, and then D",
-	"recognize currently selected control": "INSERT+SPACEBAR, followed by O, and then C",
-	"recognize currently selected image file": "INSERT+SPACEBAR, followed by O, and then F",
-	"recognize entire screen": "INSERT+SPACEBAR, followed by O, and then S",
-	"refresh screen": "INSERT+ESC",
-	"restrict jaws cursor": "INSERT+R",
-	"return to placemarker in word": "ALT+WINDOWS Key+K",
-	"return to previous cell": "CTRL+WINDOWS KEY+SHIFT+J ",
-	"rewind during say all": "LEFT ARROW",
-	"right mouse button": "NUM PAD STAR",
-	"route jaws cursor to pc cursor": "INSERT+NUM PAD MINUS",
-	"route pc cursor to jaws cursor": "INSERT+NUM PAD PLUS",
-	"run jaws manager": "INSERT+F2",
-	"say all": "INSERT+DOWN ARROW",
-	"say bottom line of window": "INSERT+PAGE DOWN",
-	"say character phonetically": "NUM PAD 5 twice quickly",
-	"say character": "NUM PAD 5",
-	"say color": "INSERT+5 on the numbers row",
-	"say current control hot key": "SHIFT+NUM PAD 5",
-	"say default button of dialog box": "INSERT+E",
-	"say font": "INSERT+F",
-	"say from cursor": "INSERT+PAGE UP",
-	"say line": " INSERT+UP ARROW",
-	"say next character": "RIGHT ARROW",
-	"say next line": "DOWN ARROW",
-	"say next paragraph": "CTRL+DOWN ARROW",
-	"say next sentence": "ALT+DOWN ARROW",
-	"say next word": "INSERT+RIGHT ARROW",
-	"say paragraph": "CTRL+NUM PAD 5",
-	"say prior character": "LEFT ARROW",
-	"say prior line": "UP ARROW",
-	"say prior paragraph": "CTRL+UP ARROW",
-	"say prior sentence": "ALT+UP ARROW",
-	"say prior word": "INSERT+LEFT ARROW",
-	"say selected text": "INSERT+SHIFT+ DOWN ARROW",
-	"say sentence": "ALT+NUM PAD 5",
-	"say system time": "INSERT+F12",
-	"say to cursor": "INSERT+HOME",
-	"say top line of window": "INSERT+END",
-	"say window prompt and text": "INSERT+TAB",
-	"say window title": "INSERT+T",
-	"say word": "INSERT+NUM PAD 5",
-	"select a system tray icon dialog": "INSERT+F11",
-	"select entire element": "F8",
-	"select language": "CTRL+WINDOWS Key+L",
-	"select scheme": "ALT+INSERT+S",
-	"select table": "F8",
-	"select text from placemarker to cursor position": "INSERT+SPACEBAR followed by M",
-	"select voice profile": "CTRL+INSERT+S",
-	"set temporary placemarker (permanent marker for word)": "CTRL+WINDOWS Key+K",
-	"shift+ number row keys": "7 through 0",
-	"show speech history": "INSERT+SPACEBAR followed by H",
-	"shut down jaws": "INSERT+F4",
-	"skip past links": "N",
-	"speech on and off": "INSERT+SPACEBAR, followed by S",
-	"spell line": "INSERT+UP ARROW twice quickly",
-	"spell word": "INSERT+NUM PAD 5 twice quickly",
-	"start skim reading": "CTRL+INSERT+DOWN ARROW",
-	"switch to a specific tab number": "CTRL+n, where n is a digit from 1 through 8 ",
-	"switch to last tab": "CTRL+9",
-	"switch to the next tab": " CTRL+TAB",
-	"switch to the previous tab": "CTRL+SHIFT+TAB",
-	"temporarily decrease voice rate when not in say all": "ALT+CTRL+PAGE DOWN",
-	"temporarily increase voice rate when not in say all": "ALT+CTRL+PAGE UP",
-	"temporarily toggle smart": "INSERT+X",
-	"toggle audio ducking (windows 8.1 and later)": "INSERT+SPACEBAR followed by D",
-	"toggle between target and controller desktop (controller user only)": "INSERT+ALT+TAB",
-	"toggle default mode (used for troubleshooting)": "INSERT+SPACEBAR followed by Z",
-	"toggle speech on and off": "INSERT+SPACEBAR, followed by S",
-	"toggle video on or off on controller (controller user only)": "INSERT+CTRL+SHIFT+V",
-	"touch cursor": "SHIFT+NUM PAD PLUS",
-	"virtual html features": "INSERT+F3",
-	"virtualize current control": "ALT+SHIFT+INSERT+W",
-	"virtualize window": "ALT+INSERT+W",
-	"window list dialog": "INSERT+F10",
-	"windows key help": "INSERT+W"
+  "desktop": [
+    {
+      "description": "acquire image from camera or scanner",
+      "command": "INSERT+SPACEBAR, followed by O, and then A"
+    },
+    {
+      "description": "activate mouse over",
+      "command": "INSERT+CTRL+ENTER"
+    },
+    {
+      "description": "announce help message for mouse echo commands",
+      "command": "INSERT+SPACEBAR, followed by E, and then QUESTION MARK"
+    },
+    {
+      "description": "announce help message for ocr commands",
+      "command": "INSERT+SPACEBAR, followed by O, and then QUESTION MARK"
+    },
+    {
+      "description": "aria live region text filter",
+      "command": "WINDOWS Key+CTRL+DASH"
+    },
+    {
+      "description": "assign custom label",
+      "command": "CTRL+INSERT+TAB"
+    },
+    {
+      "description": "cancel or close a menu",
+      "command": "ESC"
+    },
+    {
+      "description": "cancel recognition while in progress",
+      "command": "INSERT+SPACEBAR, followed by O, and then Q"
+    },
+    {
+      "description": "change skim reading preferences",
+      "command": "CTRL+SHIFT+INSERT+DOWN ARROW"
+    },
+    {
+      "description": "choose a menu item",
+      "command": "ENTER"
+    },
+    {
+      "description": "close combo box",
+      "command": "ALT+UP ARROW"
+    },
+    {
+      "description": "close current tab",
+      "command": "CTRL+W or CTRL+F4"
+    },
+    {
+      "description": "copy",
+      "command": "CTRL+C"
+    },
+    {
+      "description": "copy selected text to fsclipboard",
+      "command": "INSERT+WINDOWS Key+C"
+    },
+    {
+      "description": "delete current character",
+      "command": "DELETE"
+    },
+    {
+      "command": "DELETE",
+      "description": "delete files"
+    },
+    {
+      "description": "display detailed element information",
+      "command": "CTRL+SHIFT+INSERT+F1"
+    },
+    {
+      "description": "display entire element",
+      "command": "SHIFT+INSERT+F1"
+    },
+    {
+      "description": "end jaws tandem session",
+      "command": "INSERT+ALT+T"
+    },
+    {
+      "command": "INSERT+ALT+T",
+      "description": "ends jaws tandem session"
+    },
+    {
+      "description": "fast forward during say all",
+      "command": "RIGHT ARROW"
+    },
+    {
+      "description": "file or folder",
+      "command": "F5"
+    },
+    {
+      "description": "first form field",
+      "command": "INSERT+CTRL+HOME"
+    },
+    {
+      "description": "frame get bottom right",
+      "command": "CTRL+SHIFT+RIGHT BRACKET"
+    },
+    {
+      "description": "get application version",
+      "command": "CTRL+INSERT+V CAPS"
+    },
+    {
+      "description": "get help",
+      "command": "F1"
+    },
+    {
+      "description": "go up one level",
+      "command": "BACKSPACE"
+    },
+    {
+      "description": "graphics labeler",
+      "command": "INSERT+G"
+    },
+    {
+      "description": "increase voice rate during say all",
+      "command": "PAGE DOWN"
+    },
+    {
+      "description": "interrupt speech",
+      "command": "CTRL"
+    },
+    {
+      "description": "jaws find",
+      "command": "CTRL+INSERT+F"
+    },
+    {
+      "description": "jaws find next",
+      "command": "INSERT+F3"
+    },
+    {
+      "description": "jaws help for applications",
+      "command": "INSERT+F1 twice quickly"
+    },
+    {
+      "description": "jaws window",
+      "command": "INSERT+J"
+    },
+    {
+      "description": "last element",
+      "command": "CTRL+END"
+    },
+    {
+      "description": "last form field",
+      "command": "INSERT+CTRL+END"
+    },
+    {
+      "description": "list buttons",
+      "command": "CTRL+INSERT+B"
+    },
+    {
+      "description": "list check boxes",
+      "command": "CTRL+INSERT+X"
+    },
+    {
+      "description": "list form fields",
+      "command": "INSERT+F5"
+    },
+    {
+      "description": "list frames",
+      "command": "INSERT+F9"
+    },
+    {
+      "description": "list links",
+      "command": "INSERT+F7"
+    },
+    {
+      "description": "list radio buttons",
+      "command": "CTRL+INSERT+A"
+    },
+    {
+      "description": "move between menus",
+      "command": "ALT, ARROW KEYS"
+    },
+    {
+      "description": "move one character left",
+      "command": "LEFT ARROW"
+    },
+    {
+      "description": "move one paragraph up",
+      "command": "CTRL+UP ARROW"
+    },
+    {
+      "description": "move one word left",
+      "command": "CTRL+LEFT ARROW"
+    },
+    {
+      "description": "move to another page",
+      "command": "CTRL+TAB"
+    },
+    {
+      "description": "move to beginning",
+      "command": "CTRL+HOME"
+    },
+    {
+      "command": "CTRL+END",
+      "description": "move to end"
+    },
+    {
+      "description": "move to end of line",
+      "command": "END"
+    },
+    {
+      "description": "move to the next or prior placemarker",
+      "command": "K or SHIFT+K"
+    },
+    {
+      "description": "next button",
+      "command": "B"
+    },
+    {
+      "description": "next clickable element",
+      "command": "SLASH*"
+    },
+    {
+      "description": "next column",
+      "command": "WINDOWS KEY+ALT+RIGHT ARROW"
+    },
+    {
+      "description": "next edit box",
+      "command": "E"
+    },
+    {
+      "description": "next element",
+      "command": "RIGHT ARROW or TAB"
+    },
+    {
+      "description": "next frame",
+      "command": "M"
+    },
+    {
+      "description": "next heading",
+      "command": "H"
+    },
+    {
+      "description": "next mouse over element",
+      "command": "SEMICOLON*"
+    },
+    {
+      "description": "next object tag",
+      "command": "O"
+    },
+    {
+      "description": "next same element",
+      "command": "S"
+    },
+    {
+      "description": "next separator",
+      "command": "DASH"
+    },
+    {
+      "description": "next visited link",
+      "command": "V"
+    },
+    {
+      "description": "number row keys",
+      "command": "7 through 0"
+    },
+    {
+      "description": "open a new tab from the address bar",
+      "command": "ALT+ENTER"
+    },
+    {
+      "description": "open combo box",
+      "command": "ALT+DOWN ARROW"
+    },
+    {
+      "description": "open links in a new tab in the background",
+      "command": "CTRL+ENTER"
+    },
+    {
+      "description": "open links in a new tab in the foreground",
+      "command": "CTRL+SHIFT+ENTER"
+    },
+    {
+      "description": "open run dialog",
+      "command": "WINDOWS KEY+R"
+    },
+    {
+      "description": "open the application control menu",
+      "command": "ALT+SPACEBAR"
+    },
+    {
+      "description": "open windows explorer",
+      "command": "WINDOWS KEY+E"
+    },
+    {
+      "description": "pass key through",
+      "command": "INSERT+3 on the numbers row"
+    },
+    {
+      "description": "permanently decrease voice rate when not in say all",
+      "command": "ALT+WINDOWS Key+CTRL+PAGE DOWN"
+    },
+    {
+      "description": "permanently increase voice rate when not in say all",
+      "command": "ALT+WINDOWS Key+CTRL+PAGE UP"
+    },
+    {
+      "description": "prior cell in row",
+      "command": "ALT+CTRL+LEFT ARROW"
+    },
+    {
+      "description": "prior check box",
+      "command": "SHIFT+X"
+    },
+    {
+      "description": "prior different element",
+      "command": "SHIFT+D"
+    },
+    {
+      "description": "prior edit box",
+      "command": "SHIFT+E"
+    },
+    {
+      "description": "prior form field",
+      "command": "SHIFT+F"
+    },
+    {
+      "description": "prior frame",
+      "command": "SHIFT+M"
+    },
+    {
+      "description": "prior row",
+      "command": "WINDOWS KEY+ALT+UP ARROW"
+    },
+    {
+      "description": "prior same element",
+      "command": "SHIFT+S"
+    },
+    {
+      "description": "quit the active application",
+      "command": "ALT+F4"
+    },
+    {
+      "description": "read address bar",
+      "command": "INSERT+A"
+    },
+    {
+      "description": "read columns 1 through 10 of a list view",
+      "command": "CTRL+INSERT+n, where n is a value from 1, 2, 3 through 0"
+    },
+    {
+      "description": "read row",
+      "command": "WINDOWS KEY+COMMA or WINDOWS KEY+NUM PAD 5"
+    },
+    {
+      "description": "read word in context",
+      "command": "INSERT+C"
+    },
+    {
+      "description": "recognize current application window",
+      "command": "INSERT+SPACEBAR, followed by O, and then W"
+    },
+    {
+      "description": "recognize currently selected image file",
+      "command": "INSERT+SPACEBAR, followed by O, and then F"
+    },
+    {
+      "description": "recognize entire screen",
+      "command": "INSERT+SPACEBAR, followed by O, and then S"
+    },
+    {
+      "description": "rename a file or folder",
+      "command": "F2"
+    },
+    {
+      "description": "rename permanent placemarkers",
+      "command": "CTRL+SHIFT+K"
+    },
+    {
+      "description": "return to previous cell",
+      "command": "CTRL+WINDOWS KEY+SHIFT+J"
+    },
+    {
+      "description": "reverse direction through pages",
+      "command": "CTRL+SHIFT+TAB"
+    },
+    {
+      "description": "route jaws cursor to pc cursor",
+      "command": "INSERT+NUM PAD MINUS"
+    },
+    {
+      "description": "route jaws cursor to touch cursor",
+      "command": "INSERT+SHIFT+NUM PAD MINUS"
+    },
+    {
+      "description": "route touch cursor to jaws cursor",
+      "command": "INSERT+SHIFT+NUM PAD PLUS"
+    },
+    {
+      "description": "run jaws manager",
+      "command": "INSERT+F2"
+    },
+    {
+      "description": "say bottom line of window",
+      "command": "INSERT+PAGE DOWN"
+    },
+    {
+      "description": "say character",
+      "command": "NUM PAD 5"
+    },
+    {
+      "description": "say current control hot key",
+      "command": "SHIFT+NUM PAD 5"
+    },
+    {
+      "description": "say current element",
+      "command": "CAPS LOCK+I"
+    },
+    {
+      "description": "say from cursor",
+      "command": "INSERT+PAGE UP"
+    },
+    {
+      "description": "say line",
+      "command": "INSERT+UP ARROW"
+    },
+    {
+      "description": "say next paragraph",
+      "command": "CTRL+DOWN ARROW"
+    },
+    {
+      "command": "ALT+DOWN ARROW",
+      "description": "say next sentence"
+    },
+    {
+      "command": "LEFT ARROW",
+      "description": "say prior character"
+    },
+    {
+      "description": "say prior line",
+      "command": "UP ARROW"
+    },
+    {
+      "description": "say prior word",
+      "command": "INSERT+LEFT ARROW"
+    },
+    {
+      "description": "say selected text",
+      "command": "INSERT+SHIFT+ DOWN ARROW"
+    },
+    {
+      "description": "say to cursor",
+      "command": "INSERT+HOME"
+    },
+    {
+      "description": "say top line of window",
+      "command": "INSERT+END"
+    },
+    {
+      "description": "say word",
+      "command": "INSERT+NUM PAD 5"
+    },
+    {
+      "command": "PAGE DOWN",
+      "description": "scroll down one screen"
+    },
+    {
+      "description": "select all",
+      "command": "CTRL+A"
+    },
+    {
+      "description": "select entire element",
+      "command": "F8"
+    },
+    {
+      "description": "select one character right",
+      "command": "SHIFT+RIGHT ARROW"
+    },
+    {
+      "description": "select one word left",
+      "command": "CTRL+SHIFT+LEFT ARROW"
+    },
+    {
+      "description": "select scheme",
+      "command": "ALT+INSERT+S"
+    },
+    {
+      "command": "F8",
+      "description": "select table"
+    },
+    {
+      "description": "select to beginning of line",
+      "command": "SHIFT+HOME"
+    },
+    {
+      "description": "select to end",
+      "command": "CTRL+SHIFT+END"
+    },
+    {
+      "description": "set temporary placemarker",
+      "command": "CTRL+WINDOWS Key+K"
+    },
+    {
+      "command": "7 through 0",
+      "description": "shift+ number row keys"
+    },
+    {
+      "description": "skip past links",
+      "command": "N"
+    },
+    {
+      "description": "speak character",
+      "command": "INSERT+SPACEBAR, followed by E, and then C"
+    },
+    {
+      "description": "speak word",
+      "command": "INSERT+SPACEBAR, followed by E, and then W"
+    },
+    {
+      "description": "speech on and off",
+      "command": "INSERT+SPACEBAR, followed by S"
+    },
+    {
+      "description": "start skim reading",
+      "command": "CTRL+INSERT+DOWN ARROW"
+    },
+    {
+      "description": "switch between open applications",
+      "command": "ALT+TAB"
+    },
+    {
+      "description": "switch to last tab",
+      "command": "CTRL+9"
+    },
+    {
+      "command": "CTRL+TAB",
+      "description": "switch to the next tab"
+    },
+    {
+      "description": "temporarily increase voice rate when not in say all",
+      "command": "ALT+CTRL+PAGE UP"
+    },
+    {
+      "description": "temporarily toggle smart",
+      "command": "INSERT+X"
+    },
+    {
+      "description": "toggle audio ducking",
+      "command": "INSERT+SPACEBAR followed by D"
+    },
+    {
+      "command": "INSERT+SPACEBAR followed by D",
+      "description": "toggle audio ducking"
+    },
+    {
+      "description": "toggle default mode",
+      "command": "INSERT+SPACEBAR followed by Z"
+    },
+    {
+      "description": "toggle mouse echo",
+      "command": "INSERT+SPACEBAR, followed by E, and then O"
+    },
+    {
+      "description": "toggle video on or off on controller",
+      "command": "INSERT+CTRL+SHIFT+V"
+    },
+    {
+      "description": "touch cursor",
+      "command": "SHIFT+NUM PAD PLUS"
+    },
+    {
+      "description": "virtualize clipboard contents",
+      "command": "INSERT+SPACEBAR followed by C"
+    },
+    {
+      "description": "virtualize current control",
+      "command": "ALT+SHIFT+INSERT+W"
+    },
+    {
+      "description": "windows key help",
+      "command": "INSERT+W"
+    }
+  ]
 }
