@@ -1106,19 +1106,7 @@
     },
     {
       "command": "CTRL+SHIFT+K",
-      "description": "add permanent placemarkers"
-    },
-    {
-      "command": "CTRL+SHIFT+K",
-      "description": "delete permanent placemarkers"
-    },
-    {
-      "command": "CTRL+SHIFT+K",
-      "description": "edit permanent placemarkers"
-    },
-    {
-      "command": "CTRL+SHIFT+K",
-      "description": "rename permanent placemarkers"
+      "description": "add, delete, edit, or rename permanent placemarkers"
     },
     {
       "command": "CTRL+WINDOWS Key+K",
