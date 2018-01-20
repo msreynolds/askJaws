@@ -13,6 +13,7 @@ require('dotenv').load();
 var fs = require('fs');
 const util = require('util');
 var dataModel = require('./data/data.json');
+console.log(dataModel);
 
 // var util = require('util'); // useful for debugging/printing json objects
 var Alexa = require('alexa-sdk');
@@ -102,7 +103,7 @@ function findClosestMatchingDescription(operation) {
 	var shortestDistanceDescription = null;
 	var shortestDistance = operation.length;
 
-	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.desktop) : (dataModel.laptop);
+	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.version.desktop) : (dataModel.version.laptop);
 
 	dataModelArray.forEach(function (item) {
 		// Make a 'clean' description, aka remove all non-alpha numeric characters
@@ -216,27 +217,29 @@ function getLevenshteinDistance(a, b){
 // 	return shortestSubstringDistanceKey;
 // };
 
-function getCommand(description) {
-	// The keyboard shortcuts are different for desktop and laptop layouts
-	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.laptop) : (dataModel.desktop);
+// function getCommand(description) {
+// 	// The version number of jaws to be used *** TODO: program dynamically with settings
+// 	var version = process.env.VERSION_MODE;
+//
+// 	// The keyboard shortcuts are different for desktop and laptop layouts
+// 	var layout = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.laptop) : (dataModel.desktop);
+//
+// 	var result = null;
+// 	dataModelArray.forEach(function (item) {
+// 		if (description == item.description) {
+// 			result = item.command;
+// 			return;
+// 		}
+// 	});
+// 	return result;
+// };
 
-	var result = null;
-	dataModelArray.forEach(function (item) {
-		if (description == item.description) {
-			result = item.command;
-			return;
-		}
-	});
-	return result;
-};
-
-function getResponse(description, operation) {
-
-	var command = getCommand(description);
-	if (command) {
-		return "The keyboard shortcut for " + description + " is " + command;
-	} else {
-		return "I did not find any keyboard shortcuts for " + operation;
-	}
-};
-
+// function getResponse(description, operation) {
+//
+// 	var command = getCommand(description);
+// 	if (command) {
+// 		return "The keyboard shortcut for " + description + " is " + command;
+// 	} else {
+// 		return "I did not find any keyboard shortcuts for " + operation;
+// 	}
+// };

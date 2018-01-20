@@ -41,6 +41,9 @@ VERBOSE_MODE="false"
 # Layout Mode (desktop or laptop)
 LAYOUT_MODE="desktop"
 
+# Version Mode (Jaws version)
+VERSION_MODE="JFW18"
+
 ```
 
 Build the zip file you will upload to Amazon Lambda Function Console, the zip file is stored in ```./dist/askIndigo.zip```:
