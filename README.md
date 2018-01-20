@@ -33,7 +33,7 @@ Edit all configuration variables in ```./.env```
 SKILL_CALL_SIGN="jaws"
 
 # Amazon Configuration
-AMAZON_ALEXA_APP_ID="amzn1.echo-sdk-ams.app.some-amazon-id"
+AMAZON_ALEXA_APP_ID="amzn1.enter.ask.skill.alexa.ID"
 
 # Verbose Mode
 VERBOSE_MODE="false"

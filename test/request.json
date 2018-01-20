@@ -1,31 +1,27 @@
 {
-	"session": {
-		"new": false,
-			"sessionId": "session1234",
-			"attributes": {},
-		"user": {
-			"userId": null
-		},
-		"application": {
-			"applicationId": "amzn1.ask.skill.some-id"
-		}
-	},
-		"version": "1.0",
-		"request": {
-		"intent": {
-			"slots": {
-				"ActionName": {
-					"name": "ActionName",
-					"value": "say"
-				},
-                "ActionTarget": {
-                  "name": "ActionTarget",
-                  "value": "line"
-                }
-			},
-			"name": "KeyboardShortcutIntent"
-		},
-		"type": "IntentRequest",
-			"requestId": "request5678"
-	}
+  "session": {
+    "new": false,
+    "sessionId": "session1234",
+    "attributes": {},
+    "user": {
+      "userId": null
+    },
+    "application": {
+      "applicationId": "amzn1.ask.skill.dfecc35b-71b9-43c4-ad9a-8c25dcb75e9f"
+    }
+  },
+  "version": "1.0",
+  "request": {
+    "intent": {
+      "slots": {
+        "OperationName": {
+          "name": "OperationName",
+          "value": "say line"
+        }
+      },
+      "name": "KeyboardShortcutIntent"
+    },
+    "type": "IntentRequest",
+    "requestId": "request5678"
+  }
 }

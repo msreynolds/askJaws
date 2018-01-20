@@ -13,7 +13,9 @@ require('dotenv').load();
 var fs = require('fs');
 const util = require('util');
 var dataModel = require('./data/data.json');
-console.log(dataModel);
+
+// The version number -> TODO: program dynamically with settings
+var version = process.env.VERSION_MODE;
 
 // var util = require('util'); // useful for debugging/printing json objects
 var Alexa = require('alexa-sdk');
@@ -103,31 +105,31 @@ function findClosestMatchingDescription(operation) {
 	var shortestDistanceDescription = null;
 	var shortestDistance = operation.length;
 
-	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.version.desktop) : (dataModel.version.laptop);
+	var layout = (process.env.LAYOUT_MODE === 'laptop') ? 'laptop' : 'desktop';
 
-	dataModelArray.forEach(function (item) {
+	dataModel[`${version}`].forEach(function (item) {
 		// Make a 'clean' description, aka remove all non-alpha numeric characters
-		var cleanDescription = item.description.replace(/[\W_]+/g,'');
+		var cleanDescription = item['description'].replace(/[\W_]+/g,'');
 
 		// Exact match of operation to description or cleanDescription
-		if (item.description === operation || cleanDescription === operation) {
+		if (item['description'] === operation || cleanDescription === operation) {
 			console.log('Exact Match Found!');
-			exactMatchDescription = item.description;
+			exactMatchDescription = item['description'];
 			return;
 		}
 
 		// // Exact match of operation within a substring of key
-		// var substringKeyMatches = item.description.match(new RegExp('/'+operation+'/g'));
+		// var substringKeyMatches = item['description'].match(new RegExp('/'+operation+'/g'));
 		// if (substringKeyMatches && substringKeyMatches.length === 1) {
-		// 	console.log('Substring Match Found in Description: ' + item.description);
-		// 	substringMatchDescriptions.push(item.description);
+		// 	console.log('Substring Match Found in Description: ' + item['description']);
+		// 	substringMatchDescriptions.push(item['description']);
 		// }
 		//
 		// // Exact match of operation within a substring of cleanDescription
 		// var substringCleanDescMatches = cleanDescription.match(new RegExp('/'+operation+'/g'));
 		// if (substringCleanDescMatches && substringCleanDescMatches.length === 1) {
 		// 	console.log('Substring Match Found in Clean Description: ' + cleanDescription);
-		// 	substringMatchDescriptions.push(item.description);
+		// 	substringMatchDescriptions.push(item['description']);
 		// }
 
 		// Shortest Levenshtein Distance match between cleanDescription and operation
@@ -135,8 +137,8 @@ function findClosestMatchingDescription(operation) {
 		if (distance < shortestDistance) {
 			shortestDistance = distance;
 			console.log('Searching for: ' + operation);
-			console.log('Shorter Levenshtein Distance Match Found in Clean Description: ' + item.description + ' - ' + distance);
-			shortestDistanceDescription = item.description;
+			console.log('Shorter Levenshtein Distance Match Found in Clean Description: ' + item['description'] + ' - ' + distance);
+			shortestDistanceDescription = item['description'];
 		}
 	});
 
@@ -217,29 +219,26 @@ function getLevenshteinDistance(a, b){
 // 	return shortestSubstringDistanceKey;
 // };
 
-// function getCommand(description) {
-// 	// The version number of jaws to be used *** TODO: program dynamically with settings
-// 	var version = process.env.VERSION_MODE;
-//
-// 	// The keyboard shortcuts are different for desktop and laptop layouts
-// 	var layout = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.laptop) : (dataModel.desktop);
-//
-// 	var result = null;
-// 	dataModelArray.forEach(function (item) {
-// 		if (description == item.description) {
-// 			result = item.command;
-// 			return;
-// 		}
-// 	});
-// 	return result;
-// };
+function getCommand(description) {
+	// The keyboard shortcuts are different for desktop and laptop layouts
+	var layout = (process.env.LAYOUT_MODE === 'laptop') ? 'laptop' : 'desktop';
 
-// function getResponse(description, operation) {
-//
-// 	var command = getCommand(description);
-// 	if (command) {
-// 		return "The keyboard shortcut for " + description + " is " + command;
-// 	} else {
-// 		return "I did not find any keyboard shortcuts for " + operation;
-// 	}
-// };
+	var result = null;
+	dataModel[`${version}`].forEach(function (item) {
+		if (description == item['description']) {
+			result = item[`${layout}`];
+			return;
+		}
+	});
+	return result;
+};
+
+function getResponse(description, operation) {
+
+	var command = getCommand(description);
+	if (command) {
+		return "The keyboard shortcut for " + description + " is " + command;
+	} else {
+		return "I did not find any keyboard shortcuts for " + operation;
+	}
+};
