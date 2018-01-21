@@ -43,3 +43,8 @@ KeyboardShortcutIntent What is the keyboard shortcut for {select language|Operat
 KeyboardShortcutIntent What is the shortcut for {read column|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {read column|OperationName}
 
+SetPreferencesIntent Set preferences
+SetPreferencesIntent To set preferences
+SetPreferencesIntent To initialize preferences
+SetPreferencesIntent Initialize preferences
+SetPreferencesIntent Initialize

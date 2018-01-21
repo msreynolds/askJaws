@@ -1,6 +1,6 @@
 /**
  * Created by Matt Reynolds (matt@mtnlabs.com) and Justin Degonda (jmdegonda@gmail.com).
- * Mountain Labs, LLC 2017 (mtnlabs.com)
+ * Mountain Labs, LLC 2018 (mtnlabs.com)
  *
  * Project: AskJaws
  * An Amazon Alexa Skill for the JAWS screen reader.  Ask JAWS for keyboard shortcuts for any action and target
@@ -11,11 +11,10 @@
 require('dotenv').load();
 
 var fs = require('fs');
-const util = require('util');
 var dataModel = require('./data/data.json');
-
-// var util = require('util'); // useful for debugging/printing json objects
 var Alexa = require('alexa-sdk');
+const util = require('util');
+//console.log(util.inspect(this.event.request, {showHidden: false, depth: null}));
 
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
@@ -24,35 +23,61 @@ exports.handler = function (event, context) {
 	alexa.execute();
 };
 
+var states = {
+	LAYOUT_PREFERENCE_MODE: '_LAYOUT_PREFERENCE_MODE'
+};
+
 var handlers = {
 	'LaunchRequest': function () {
 		console.log('Launch Request Intent');
 		getWelcomeResponse(this.emit);
 	},
-	'SessionStartedRequest': function (session) {
-		console.log('Session Started Intent', session);
+	'SessionStartedRequest': function () {
+		console.log('Session Started Intent');
 	},
-	'SessionEndedRequest': function (session) {
-		console.log('Session Ended Intent', session);
+	'SessionEndedRequest': function () {
+		console.log('Session Ended Intent');
 	},
 	'AMAZON.HelpIntent': function () {
 		console.log('AMAZON Help Intent');
 		getHelpResponse(this.emit);
 	},
 	'KeyboardShortcutIntent': function () {
-		//console.log('Keyboard Shortcut Action/Target Intent:');
-		//console.log(util.inspect(this.event.request.intent, {showHidden: false, depth: null}));
 		getKeyboardShortcut(this.event.request.intent, this.emit);
+	},
+	'SetPreferencesIntent': function () {
+		//this.handler.state = states.LAYOUT_PREFERENCE_MODE;
+		var speechOutput = "Ok, What layout preference do you prefer?  Please say 'laptop' or 'desktop'";
+        this.emit(':tell', speechOutput);
 	},
 	'AMAZON.CancelIntent': function () {
 		console.log('AMAZON Cancel Intent');
-		//this.emit(':tell', 'Ok, I will cancel that request.');
+		this.emit(':tell', 'Ok, I will cancel that request.');
 	},
 	'AMAZON.StopIntent': function () {
 		console.log('AMAZON Stop Intent');
-		//this.emit(':tell', 'Ok, I will stop that request.');
+		this.emit(':tell', 'Ok, I will stop that request.');
 	}
 };
+
+var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERENCE_MODE, {
+    'CaptureLayoutPreferenceIntent': function () {
+        //var pref = this.event.request.intent.slots.LayoutPreference.value;
+    	var speechOutput = "Ok, you prefer laptop layout";
+        this.emit(':tell', speechOutput);
+    },
+    'AMAZON.StopIntent': function () {
+        console.log('AMAZON Stop Intent');
+        this.emit(':tell', 'Ok, I will stop that request.');
+    },
+    'SessionEndedRequest': function () {
+        console.log('Session Ended Intent');
+    },
+    'Unhandled': function() {
+        console.log("UNHANDLED");
+        this.emit(':tell', 'I have encountered an unhandled request.');
+    }
+});
 
 /**
  * Behavior Functions
@@ -98,7 +123,6 @@ function getSpeechOutput(operation) {
 function findClosestMatchingDescription(operation) {
 
 	var exactMatchDescription = null;
-	// var substringMatchDescriptions = [];
 	var shortestDistanceDescription = null;
 	var shortestDistance = operation.length;
 
@@ -115,20 +139,6 @@ function findClosestMatchingDescription(operation) {
 			return;
 		}
 
-		// // Exact match of operation within a substring of key
-		// var substringKeyMatches = item.description.match(new RegExp('/'+operation+'/g'));
-		// if (substringKeyMatches && substringKeyMatches.length === 1) {
-		// 	console.log('Substring Match Found in Description: ' + item.description);
-		// 	substringMatchDescriptions.push(item.description);
-		// }
-		//
-		// // Exact match of operation within a substring of cleanDescription
-		// var substringCleanDescMatches = cleanDescription.match(new RegExp('/'+operation+'/g'));
-		// if (substringCleanDescMatches && substringCleanDescMatches.length === 1) {
-		// 	console.log('Substring Match Found in Clean Description: ' + cleanDescription);
-		// 	substringMatchDescriptions.push(item.description);
-		// }
-
 		// Shortest Levenshtein Distance match between cleanDescription and operation
 		var distance = getLevenshteinDistance(cleanDescription, operation);
 		if (distance < shortestDistance) {
@@ -141,12 +151,9 @@ function findClosestMatchingDescription(operation) {
 
 	// Key Weighting Algorithm:
 	// 1) always use exact match if it exists
-	// 2) always use the shortest distance on an exact substring match, if substring matches were found
-	// 3) always use the shortest distance match, if a distance shorter than the operation phrase length was found
-	// 4) else report that there was no match found
+	// 2) otherwise, always use the shortest distance match, if a distance shorter than the operation phrase length was found
 
 	if (exactMatchDescription) return exactMatchDescription;
-	// if (substringMatchDescriptions.length > 0) return getShortestDistanceSubstringDescription(substringMatchDescriptions, operation);
 	if (shortestDistanceDescription) return shortestDistanceDescription;
 
 	return null;
@@ -187,34 +194,6 @@ function getLevenshteinDistance(a, b){
 
 	return matrix[b.length][a.length];
 };
-
-// TODO: Test this method
-// function getShortestDistanceSubstringDescription(substringMatchDescriptions, operation) {
-// 	var longestKeyLength = 0;
-// 	var shortestSubstringDistanceKey = null;
-//
-// 	substringMatchDescriptions.forEach(function(substringMatchKey) {
-// 		if (substringMatchKey.length > longestKeyLength) {
-// 			// find the longest key
-// 			longestKeyLength = substringMatchKey.length;
-//
-// 			// set the default substring key to the longest key found
-// 			shortestSubstringDistanceKey = substringMatchKey;
-// 		}
-// 	});
-//
-// 	// Now try to find a key with a shorter Levenshtein distance to the original operation
-// 	var shortestSubstringDistance = longestKeyLength;
-// 	substringMatchDescriptions.forEach(function(substringMatchKey) {
-// 		var substringDistance = getLevenshteinDistance(substringMatchKey, operation);
-// 		if (substringDistance < shortestSubstringDistance) {
-// 			shortestSubstringDistance = substringDistance;
-// 			shortestSubstringDistanceKey = substringMatchKey;
-// 		}
-// 	});
-//
-// 	return shortestSubstringDistanceKey;
-// };
 
 function getCommand(description) {
 	// The keyboard shortcuts are different for desktop and laptop layouts

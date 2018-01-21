@@ -16,6 +16,19 @@
           "type": "LITERAL"
         }
       ]
+    },
+    {
+      "intent": "SetPreferencesIntent",
+      "slots": []
+    },
+    {
+      "intent": "CaptureLayoutPreferenceIntent",
+      "slots": [
+        {
+          "name": "LayoutPreference",
+          "type": "LITERAL"
+        }
+      ]
     }
   ]
 }
