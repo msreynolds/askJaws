@@ -1,0 +1,32 @@
+{
+  "session": {
+    "new": false,
+    "sessionId": "session1234",
+    "attributes": {},
+    "user": {
+      "userId": "someone@gmail.com"
+    },
+    "application": {
+      "applicationId": "amzn1.ask.skill.some-id"
+    }
+  },
+  "version": "1.0",
+  "request": {
+    "intent": {
+      "slots": {
+        "ActionName": {
+          "name": "ActionName",
+          "value": "say"
+        },
+        "ActionTarget": {
+          "name": "ActionTarget",
+          "value": "line"
+        }
+      },
+      "name": "KeyboardShortcutIntent"
+    },
+    "type": "IntentRequest",
+    "requestId": "request5678"
+  }
+}
+

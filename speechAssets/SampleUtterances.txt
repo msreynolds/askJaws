@@ -47,4 +47,8 @@ SetPreferencesIntent Set preferences
 SetPreferencesIntent To set preferences
 SetPreferencesIntent To initialize preferences
 SetPreferencesIntent Initialize preferences
+SetPreferencesIntent To initialize
 SetPreferencesIntent Initialize
+
+CaptureLayoutPreferenceIntent {laptop|LayoutPreference}
+CaptureLayoutPreferenceIntent {desktop|LayoutPreference}

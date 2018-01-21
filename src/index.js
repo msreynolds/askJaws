@@ -64,9 +64,14 @@ var handlers = {
 
 var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERENCE_MODE, {
     'CaptureLayoutPreferenceIntent': function () {
-        var pref = this.event.request.intent.slots.LayoutPreference.value;
-    	var speechOutput = "Ok, you prefer " + pref + " layout";
-        this.emit(':tell', speechOutput);
+        var layoutPreference = this.event.request.intent.slots.LayoutPreference.value;
+        this.attributes["layoutPreference"] = layoutPreference;
+
+    	var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
+    	var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
+
+    	this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
+		this.emit(':responseReady');
     },
     'AMAZON.StopIntent': function () {
         console.log('AMAZON Stop Intent');
@@ -109,16 +114,7 @@ function getKeyboardShortcut(intent, speechCallback) {
 
 /** returns the proper speech output */
 function getSpeechOutput(operation) {
-
-	var result;
-	if (process.env.VERBOSE_MODE === 'true') {
-		// Ask the user if the action/target pair were interpreted correctly
-		result = "You want the keyboard shortcut for " + operation + ", is that correct?";
-	} else {
-		// Lookup best match in the data model
-		result = getResponse(findClosestMatchingDescription(operation), operation);
-	}
-	return result;
+	return getResponse(findClosestMatchingDescription(operation), operation);
 };
 
 /** does a data model lookup for the given key (operation), if found, returns corresponding value */
