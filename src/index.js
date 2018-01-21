@@ -19,7 +19,7 @@ const util = require('util');
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
 	alexa.APP_ID = process.env.AMAZON_ALEXA_APP_ID;
-	alexa.registerHandlers(handlers);
+	alexa.registerHandlers(handlers, setLayoutPreferenceHandlers);
 	alexa.execute();
 };
 
@@ -46,9 +46,11 @@ var handlers = {
 		getKeyboardShortcut(this.event.request.intent, this.emit);
 	},
 	'SetPreferencesIntent': function () {
-		//this.handler.state = states.LAYOUT_PREFERENCE_MODE;
+		this.handler.state = states.LAYOUT_PREFERENCE_MODE;
 		var speechOutput = "Ok, What layout preference do you prefer?  Please say 'laptop' or 'desktop'";
-        this.emit(':tell', speechOutput);
+		this.response.speak(speechOutput).listen("Please say 'laptop' or 'desktop'");
+        // this.emit(':tell', speechOutput);
+		this.emit(':responseReady');
 	},
 	'AMAZON.CancelIntent': function () {
 		console.log('AMAZON Cancel Intent');
@@ -62,8 +64,8 @@ var handlers = {
 
 var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERENCE_MODE, {
     'CaptureLayoutPreferenceIntent': function () {
-        //var pref = this.event.request.intent.slots.LayoutPreference.value;
-    	var speechOutput = "Ok, you prefer laptop layout";
+        var pref = this.event.request.intent.slots.LayoutPreference.value;
+    	var speechOutput = "Ok, you prefer " + pref + " layout";
         this.emit(':tell', speechOutput);
     },
     'AMAZON.StopIntent': function () {
