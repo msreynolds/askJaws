@@ -9,6 +9,15 @@
 {
   "intents": [
     {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
       "intent": "KeyboardShortcutIntent",
       "slots": [
         {
@@ -27,6 +36,15 @@
         {
           "name": "LayoutPreference",
           "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "CaptureJawsVersionIntent",
+      "slots": [
+        {
+          "name": "JawsVersion",
+          "type": "NUMBER"
         }
       ]
     }

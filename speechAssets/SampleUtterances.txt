@@ -52,3 +52,6 @@ SetPreferencesIntent Initialize
 
 CaptureLayoutPreferenceIntent {laptop|LayoutPreference}
 CaptureLayoutPreferenceIntent {desktop|LayoutPreference}
+
+CaptureJawsVersionIntent {seventeen|JawsVersion}
+CaptureJawsVersionIntent {eighteen|JawsVersion}

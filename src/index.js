@@ -13,18 +13,19 @@ require('dotenv').load();
 var fs = require('fs');
 var dataModel = require('./data/data.json');
 var Alexa = require('alexa-sdk');
-const util = require('util');
+//const util = require('util');
 //console.log(util.inspect(this.event.request, {showHidden: false, depth: null}));
 
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
 	alexa.APP_ID = process.env.AMAZON_ALEXA_APP_ID;
-	alexa.registerHandlers(handlers, setLayoutPreferenceHandlers);
+	alexa.registerHandlers(handlers, setLayoutPreferenceHandlers, setJawsVersionHandlers);
 	alexa.execute();
 };
 
 var states = {
-	LAYOUT_PREFERENCE_MODE: '_LAYOUT_PREFERENCE_MODE'
+	LAYOUT_PREFERENCE_MODE: '_LAYOUT_PREFERENCE_MODE',
+	JAWS_VERSION_MODE: '_JAWS_VERSION_MODE'
 };
 
 var handlers = {
@@ -46,19 +47,19 @@ var handlers = {
 		getKeyboardShortcut(this.event.request.intent, this.emit);
 	},
 	'SetPreferencesIntent': function () {
-		this.handler.state = states.LAYOUT_PREFERENCE_MODE;
 		var speechOutput = "Ok, What layout preference do you prefer?  Please say 'laptop' or 'desktop'";
+
+		this.handler.state = states.LAYOUT_PREFERENCE_MODE;
 		this.response.speak(speechOutput).listen("Please say 'laptop' or 'desktop'");
-        // this.emit(':tell', speechOutput);
 		this.emit(':responseReady');
 	},
 	'AMAZON.CancelIntent': function () {
 		console.log('AMAZON Cancel Intent');
-		this.emit(':tell', 'Ok, I will cancel that request.');
+        this.emit(':tell', 'Cancelling.');
 	},
 	'AMAZON.StopIntent': function () {
 		console.log('AMAZON Stop Intent');
-		this.emit(':tell', 'Ok, I will stop that request.');
+        this.emit(':tell', 'Ok, Goodbye!');
 	}
 };
 
@@ -70,19 +71,61 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
     	var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
     	var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
 
+        this.handler.state = states.JAWS_VERSION_MODE;
     	this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
 		this.emit(':responseReady');
     },
+    'AMAZON.CancelIntent': function () {
+        console.log('AMAZON Cancel Intent');
+        this.emit(':tell', 'Cancelling.');
+    },
+    'AMAZON.HelpIntent': function () {
+        console.log('AMAZON Help Intent');
+        this.emit(':tell', 'Ok, I will help you.');
+    },
     'AMAZON.StopIntent': function () {
         console.log('AMAZON Stop Intent');
-        this.emit(':tell', 'Ok, I will stop that request.');
+        this.emit(':tell', 'Ok, Goodbye!');
     },
     'SessionEndedRequest': function () {
         console.log('Session Ended Intent');
     },
     'Unhandled': function() {
         console.log("UNHANDLED");
-        this.emit(':tell', 'I have encountered an unhandled request.');
+        this.emit(':tell', 'I have encountered an unhandled request in the set layout preference handlers.');
+    }
+});
+
+var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, {
+    'CaptureJawsVersionIntent': function () {
+        var jawsVersion = this.event.request.intent.slots.JawsVersion.value;
+        this.attributes["jawsVersion"] = jawsVersion;
+
+        var speechOutput = "Ok, your jaws version is " + jawsVersion + ".  Your preferences have been saved";
+
+        // TODO: write preferences to DynamoDB
+
+        this.response.speak(speechOutput);
+        this.emit(':responseReady');
+    },
+    'AMAZON.CancelIntent': function () {
+        console.log('AMAZON Cancel Intent');
+        this.emit(':tell', 'Cancelling.');
+    },
+    'AMAZON.HelpIntent': function () {
+        console.log('AMAZON Help Intent');
+        this.emit(':tell', 'Ok, I will help you.');
+    },
+    'AMAZON.StopIntent': function () {
+        console.log('AMAZON Stop Intent');
+        this.emit(':tell', 'Ok, Goodbye!');
+    },
+    'SessionEndedRequest': function () {
+        console.log('Session Ended Intent');
+    },
+    'Unhandled': function() {
+        console.log("UNHANDLED");
+        this.emit(':tell', 'I have encountered an unhandled request in the set jaws version handlers.');
     }
 });
 
