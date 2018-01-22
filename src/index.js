@@ -68,7 +68,8 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
         var layoutPreference = this.event.request.intent.slots.LayoutPreference.value;
         this.attributes["layoutPreference"] = layoutPreference;
 
-    	var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
+    	// var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
+    	var speechOutput = "Ok.";
     	var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
 
         this.handler.state = states.JAWS_VERSION_MODE;
@@ -101,9 +102,12 @@ var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, 
         var jawsVersion = this.event.request.intent.slots.JawsVersion.value;
         this.attributes["jawsVersion"] = jawsVersion;
 
-        var speechOutput = "Ok, your jaws version is " + jawsVersion + ".  Your preferences have been saved";
+        var speechOutput = "Ok.";
+        speechOutput += "  Your layout preference is: " + this.attributes['layoutPreference'] + ".";
+        speechOutput += "  Your jaws version is: " + this.attributes['jawsVersion'] + ".";
 
         // TODO: write preferences to DynamoDB
+        speechOutput += "  Your preferences have been saved.";
 
         this.response.speak(speechOutput);
         this.emit(':responseReady');
