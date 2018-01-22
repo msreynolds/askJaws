@@ -1,57 +1,40 @@
 KeyboardShortcutIntent What is the shortcut for {acquire image from camera or scanner|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {acquire image from camera or scanner|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {acquire image from camera|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {acquire image from camera|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {acquire image from scanner|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {acquire image from scanner|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {activate mouse over|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {activate mouse over|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {assign custom label|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {assign custom label|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {read column|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {read column|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {read row|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {read row|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {say line|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {say line|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {say from cursor|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {say from cursor|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {say font|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {say font|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {say color|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {say color|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {say character|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {say character|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {say word|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {say word|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {select language|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {select language|OperationName}
-
 KeyboardShortcutIntent What is the shortcut for {read column|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {read column|OperationName}
-
 SetPreferencesIntent Set preferences
 SetPreferencesIntent To set preferences
 SetPreferencesIntent To initialize preferences
 SetPreferencesIntent Initialize preferences
 SetPreferencesIntent To initialize
 SetPreferencesIntent Initialize
-
-CaptureLayoutPreferenceIntent {laptop|LayoutPreference}
-CaptureLayoutPreferenceIntent {desktop|LayoutPreference}
-
+CaptureLayoutPreferenceIntent {LayoutPreference}
+CaptureLayoutPreferenceIntent {LayoutPreference}
 CaptureJawsVersionIntent {seventeen|JawsVersion}
 CaptureJawsVersionIntent {eighteen|JawsVersion}

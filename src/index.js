@@ -78,6 +78,7 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
     },
     'AMAZON.CancelIntent': function () {
         console.log('AMAZON Cancel Intent');
+        this.handler.state = '';
         this.emit(':tell', 'Cancelling.');
     },
     'AMAZON.HelpIntent': function () {
@@ -86,13 +87,16 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
     },
     'AMAZON.StopIntent': function () {
         console.log('AMAZON Stop Intent');
+        this.handler.state = '';
         this.emit(':tell', 'Ok, Goodbye!');
     },
     'SessionEndedRequest': function () {
         console.log('Session Ended Intent');
+        this.handler.state = '';
     },
     'Unhandled': function() {
         console.log("UNHANDLED");
+        this.handler.state = '';
         this.emit(':tell', 'I have encountered an unhandled request in the set layout preference handlers.');
     }
 });
@@ -114,6 +118,7 @@ var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, 
     },
     'AMAZON.CancelIntent': function () {
         console.log('AMAZON Cancel Intent');
+        this.handler.state = '';
         this.emit(':tell', 'Cancelling.');
     },
     'AMAZON.HelpIntent': function () {
@@ -122,13 +127,16 @@ var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, 
     },
     'AMAZON.StopIntent': function () {
         console.log('AMAZON Stop Intent');
+        this.handler.state = '';
         this.emit(':tell', 'Ok, Goodbye!');
     },
     'SessionEndedRequest': function () {
         console.log('Session Ended Intent');
+        this.handler.state = '';
     },
     'Unhandled': function() {
         console.log("UNHANDLED");
+        this.handler.state = '';
         this.emit(':tell', 'I have encountered an unhandled request in the set jaws version handlers.');
     }
 });

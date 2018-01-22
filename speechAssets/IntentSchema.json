@@ -35,7 +35,7 @@
       "slots": [
         {
           "name": "LayoutPreference",
-          "type": "LITERAL"
+          "type": "LIST_OF_LAYOUTS"
         }
       ]
     },
@@ -50,3 +50,10 @@
     }
   ]
 }
+
+/**
+ * Custom Slot Values
+ * LIST_OF_LAYOUTS
+ * desktop
+ * laptop
+*/
