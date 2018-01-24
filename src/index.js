@@ -66,15 +66,21 @@ var handlers = {
 var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERENCE_MODE, {
     'CaptureLayoutPreferenceIntent': function () {
         var layoutPreference = this.event.request.intent.slots.LayoutPreference.value;
-        this.attributes["layoutPreference"] = layoutPreference;
 
-    	// var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
-    	var speechOutput = "Ok.";
-    	var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
+        if (layoutPreference === 'laptop' || layoutPreference === 'desktop') {
+        	this.attributes["layoutPreference"] = layoutPreference;
+			// var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
+			var speechOutput = "Ok.";
+			var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
 
-        this.handler.state = states.JAWS_VERSION_MODE;
-    	this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
-		this.emit(':responseReady');
+			this.handler.state = states.JAWS_VERSION_MODE;
+			this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
+			this.emit(':responseReady');
+		}
+		else {
+            this.response.speak("Please say 'laptop' or 'desktop'").listen("Please say 'laptop' or 'desktop'");
+            this.emit(':responseReady');
+		}
     },
     'AMAZON.CancelIntent': function () {
         console.log('AMAZON Cancel Intent');
@@ -95,7 +101,8 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
         this.handler.state = '';
     },
     'Unhandled': function() {
-        console.log("UNHANDLED");
+        console.log("Unhandled:");
+        console.log(this.event);
         this.handler.state = '';
         this.emit(':tell', 'I have encountered an unhandled request in the set layout preference handlers.');
     }
