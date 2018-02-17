@@ -19,7 +19,8 @@ var Alexa = require('alexa-sdk');
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
 	alexa.APP_ID = process.env.AMAZON_ALEXA_APP_ID;
-	alexa.registerHandlers(handlers, setLayoutPreferenceHandlers, setJawsVersionHandlers);
+	alexa.registerHandlers(handlers, setLayoutPreferenceHandlers);
+	// alexa.registerHandlers(handlers, setLayoutPreferenceHandlers, setJawsVersionHandlers);
 	alexa.execute();
 };
 
@@ -69,17 +70,20 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
 
         if (layoutPreference === 'laptop' || layoutPreference === 'desktop') {
         	this.attributes["layoutPreference"] = layoutPreference;
-			// var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
-			var speechOutput = "Ok.";
-			var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
+			var speechOutput = "Ok, your layout preference is " + layoutPreference + ".";
+            this.response.speak(speechOutput);
 
-			this.handler.state = states.JAWS_VERSION_MODE;
-			this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
+            // TODO: write preferences to DynamoDB
+			// speechOutput += "  Your preferences have been saved.";
+
 			this.emit(':responseReady');
-		}
-		else {
-            this.response.speak("Please say 'laptop' or 'desktop'").listen("Please say 'laptop' or 'desktop'");
-            this.emit(':responseReady');
+
+			// TODO: Go to next preference, if there are any (ex. Set Jaws Version)
+			// var speechOutput = "Ok.";
+			// var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
+			// this.handler.state = states.JAWS_VERSION_MODE;
+			// this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
+			// this.emit(':responseReady');
 		}
     },
     'AMAZON.CancelIntent': function () {
@@ -102,51 +106,50 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(states.LAYOUT_PREFERE
     },
     'Unhandled': function() {
         console.log("Unhandled:");
-        console.log(this.event);
-        this.handler.state = '';
-        this.emit(':tell', 'I have encountered an unhandled request in the set layout preference handlers.');
-    }
-});
-
-var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, {
-    'CaptureJawsVersionIntent': function () {
-        var jawsVersion = this.event.request.intent.slots.JawsVersion.value;
-        this.attributes["jawsVersion"] = jawsVersion;
-
-        var speechOutput = "Ok.";
-        speechOutput += "  Your layout preference is: " + this.attributes['layoutPreference'] + ".";
-        speechOutput += "  Your jaws version is: " + this.attributes['jawsVersion'] + ".";
-
-        // TODO: write preferences to DynamoDB
-        speechOutput += "  Your preferences have been saved.";
-
-        this.response.speak(speechOutput);
+        this.response.speak("Please say 'laptop' or 'desktop'").listen("Please say 'laptop' or 'desktop'");
         this.emit(':responseReady');
-    },
-    'AMAZON.CancelIntent': function () {
-        console.log('AMAZON Cancel Intent');
-        this.handler.state = '';
-        this.emit(':tell', 'Cancelling.');
-    },
-    'AMAZON.HelpIntent': function () {
-        console.log('AMAZON Help Intent');
-        this.emit(':tell', 'Ok, I will help you.');
-    },
-    'AMAZON.StopIntent': function () {
-        console.log('AMAZON Stop Intent');
-        this.handler.state = '';
-        this.emit(':tell', 'Ok, Goodbye!');
-    },
-    'SessionEndedRequest': function () {
-        console.log('Session Ended Intent');
-        this.handler.state = '';
-    },
-    'Unhandled': function() {
-        console.log("UNHANDLED");
-        this.handler.state = '';
-        this.emit(':tell', 'I have encountered an unhandled request in the set jaws version handlers.');
     }
 });
+
+// var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, {
+//     'CaptureJawsVersionIntent': function () {
+//         var jawsVersion = this.event.request.intent.slots.JawsVersion.value;
+//         this.attributes["jawsVersion"] = jawsVersion;
+//
+//         var speechOutput = "Ok.";
+//         speechOutput += "  Your layout preference is: " + this.attributes['layoutPreference'] + ".";
+//         speechOutput += "  Your jaws version is: " + this.attributes['jawsVersion'] + ".";
+//
+//         // TODO: write preferences to DynamoDB
+//         speechOutput += "  Your preferences have been saved.";
+//
+//         this.response.speak(speechOutput);
+//         this.emit(':responseReady');
+//     },
+//     'AMAZON.CancelIntent': function () {
+//         console.log('AMAZON Cancel Intent');
+//         this.handler.state = '';
+//         this.emit(':tell', 'Cancelling.');
+//     },
+//     'AMAZON.HelpIntent': function () {
+//         console.log('AMAZON Help Intent');
+//         this.emit(':tell', 'Ok, I will help you.');
+//     },
+//     'AMAZON.StopIntent': function () {
+//         console.log('AMAZON Stop Intent');
+//         this.handler.state = '';
+//         this.emit(':tell', 'Ok, Goodbye!');
+//     },
+//     'SessionEndedRequest': function () {
+//         console.log('Session Ended Intent');
+//         this.handler.state = '';
+//     },
+//     'Unhandled': function() {
+//         console.log("UNHANDLED");
+//         this.handler.state = '';
+//         this.emit(':tell', 'I have encountered an unhandled request in the set jaws version handlers.');
+//     }
+// });
 
 /**
  * Behavior Functions
