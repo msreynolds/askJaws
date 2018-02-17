@@ -12,9 +12,14 @@ require('dotenv').load();
 
 var fs = require('fs');
 var dataModel = require('./data/data.json');
+
+// The version number -> TODO: set/persist with preferences
+var version = process.env.JAWS_VERSION;
+
 var Alexa = require('alexa-sdk');
-//const util = require('util');
-//console.log(util.inspect(this.event.request, {showHidden: false, depth: null}));
+// useful for debugging/printing json objects
+// const util = require('util');
+// console.log(util.inspect(this.event.request, {showHidden: false, depth: null}));
 
 exports.handler = function (event, context) {
 	var alexa = Alexa.handler(event, context);
@@ -189,16 +194,17 @@ function findClosestMatchingDescription(operation) {
 	var shortestDistanceDescription = null;
 	var shortestDistance = operation.length;
 
-	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.desktop) : (dataModel.laptop);
+    // TODO: Fetch layout preference from persisted value, rather than env value (DynamoDB)
+	var layout = (process.env.LAYOUT_MODE === 'laptop') ? 'laptop' : 'desktop';
 
-	dataModelArray.forEach(function (item) {
+	dataModel[`${version}`].forEach(function (item) {
 		// Make a 'clean' description, aka remove all non-alpha numeric characters
-		var cleanDescription = item.description.replace(/[\W_]+/g,'');
+		var cleanDescription = item['description'].replace(/[\W_]+/g,'');
 
 		// Exact match of operation to description or cleanDescription
-		if (item.description === operation || cleanDescription === operation) {
+		if (item['description'] === operation || cleanDescription === operation) {
 			console.log('Exact Match Found!');
-			exactMatchDescription = item.description;
+			exactMatchDescription = item['description'];
 			return;
 		}
 
@@ -207,8 +213,8 @@ function findClosestMatchingDescription(operation) {
 		if (distance < shortestDistance) {
 			shortestDistance = distance;
 			console.log('Searching for: ' + operation);
-			console.log('Shorter Levenshtein Distance Match Found in Clean Description: ' + item.description + ' - ' + distance);
-			shortestDistanceDescription = item.description;
+			console.log('Shorter Levenshtein Distance Match Found in Clean Description: ' + item['description'] + ' - ' + distance);
+			shortestDistanceDescription = item['description'];
 		}
 	});
 
@@ -260,12 +266,13 @@ function getLevenshteinDistance(a, b){
 
 function getCommand(description) {
 	// The keyboard shortcuts are different for desktop and laptop layouts
-	var dataModelArray = (process.env.LAYOUT_MODE === 'laptop') ? (dataModel.laptop) : (dataModel.desktop);
+	// TODO: Fetch layout preference from persisted value, rather than env value (DynamoDB)
+	var layout = (process.env.LAYOUT_MODE === 'laptop') ? 'laptop' : 'desktop';
 
 	var result = null;
-	dataModelArray.forEach(function (item) {
-		if (description == item.description) {
-			result = item.command;
+	dataModel[`${version}`].forEach(function (item) {
+		if (description == item['description']) {
+			result = item[`${layout}`];
 			return;
 		}
 	});
@@ -281,4 +288,3 @@ function getResponse(description, operation) {
 		return "I did not find any keyboard shortcuts for " + operation;
 	}
 };
-
