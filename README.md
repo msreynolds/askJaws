@@ -46,7 +46,7 @@ VERSION_MODE="JFW18"
 
 ```
 
-Build the zip file you will upload to Amazon Lambda Function Console, the zip file is stored in ```./dist/askIndigo.zip```:
+Build the zip file you will upload to Amazon Lambda Function Console, the zip file is stored in ```./dist/askJaws.zip```:
 
 ```
 chmod 775 ./build.sh

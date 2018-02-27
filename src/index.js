@@ -168,18 +168,30 @@ function getWelcomeResponse(speechCallback) {
 /** help response */
 function getHelpResponse(speechCallback) {
 	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for the keyboard shortcut for any operation.";
-	speechCallback(':tell', speechOutput, getRepromptText());
-};
-
-function getRepromptText() {
-	return "I did not understand you, what " + process.env.SKILL_CALL_SIGN + " keyboard shortcut would you like to know?";
+	speechCallback(':tell', speechOutput, getRepromptText('keyboard shortcut'));
 };
 
 /** get the keyboard shortcut */
 function getKeyboardShortcut(intent, speechCallback) {
-
 	var speechOutput = getSpeechOutput(intent.slots.OperationName.value);
-	speechCallback(':tell', speechOutput, getRepromptText());
+	speechCallback(':tell', speechOutput, getRepromptText('keyboard shortcut'));
+};
+
+/** reprompt **/
+function getRepromptText(prompt) {
+	return "I did not understand you, what " + process.env.SKILL_CALL_SIGN + prompt + " would you like to know?";
+};
+
+/** help get list of descriptions for any keyword */
+function getHelpKeyword(speechCallback) {
+	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " to give you a list of command descriptions based on a keyword.";
+	speechCallback(':tell', speechOutput, getRepromptText('keyword'));
+};
+
+/** get list of descriptions from a keyword **/
+function getKeyboardShortcut(intent, speechCallback) {
+	var speechOutput = getSpeechOutput(intent.slots.OperationName.value);
+	speechCallback(':tell', speechOutput, getRepromptText('keyboard shortcut'));
 };
 
 /** returns the proper speech output */
@@ -263,6 +275,14 @@ function getLevenshteinDistance(a, b){
 
 	return matrix[b.length][a.length];
 };
+
+function findKeywordStrings(word, str) {
+	var keywordStrings = [];
+
+	str.split(' ').some(function(w){
+		 if (w === word) return keywordStrings.push(str);
+	 })
+}
 
 function getCommand(description) {
 	// The keyboard shortcuts are different for desktop and laptop layouts
