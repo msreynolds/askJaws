@@ -52,6 +52,9 @@ var handlers = {
 	'KeyboardShortcutIntent': function () {
 		getKeyboardShortcut(this.event.request.intent, this.emit);
 	},
+	'KeywordIntent': function () {
+		getKeyboardShortcut(this.event.request.intent, this.emit);
+	},
 	'SetPreferencesIntent': function () {
 		var speechOutput = "Ok, What layout preference do you prefer?  Please say 'laptop' or 'desktop'";
 
@@ -167,17 +170,46 @@ function getWelcomeResponse(speechCallback) {
 
 /** help response */
 function getHelpResponse(speechCallback) {
-	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for the keyboard shortcut for any operation.";
+	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for the keyboard shortcut for any operation. Or, get a list of command description options by asking for a keyword.";
+	speechCallback(':tell', speechOutput, getRepromptText('keyboard shortcut'));
+};
+
+/** get the keyboard shortcut */
+function getKeywordList(intent, speechCallback) {
+	var speechOutput = getSpeechOutput(intent.slots.OperationName.value);
 	speechCallback(':tell', speechOutput, getRepromptText());
 };
 
-function getRepromptText() {
-	return "I did not understand you, what " + process.env.SKILL_CALL_SIGN + " keyboard shortcut would you like to know?";
+/* get a list of command options */
+function getKeywordListItems(word) {
+	var keywords = [];
+	dataModel[`${version}`].forEach(function (item) {
+		return item.split(' ').some(function(w){
+			w === word ? keywords.push(item) : null;
+		})
+	})
+	return keywords;
+}
+
+function getKeywordResponse(description, word) {
+	var descriptionList = getKeywordListItems(description);
+	if (descriptionList.length <= 5) return "I found the following operations you can use to get keyboard command that contain the word " + word + " ... " + descriptionList;
+	if (descriptionList.length > 5) return "there are more then 5 operations available that contain the word " + word + " are you sure you would like to here them all?";
+	return "I did not find any keyboard shortcuts that contain the word " + word;
+};
+
+// /** help get a list of command options */
+// function getKeywordListHelp(speechCallback) {
+// 	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for a list of command descriptions available to ask.";
+// 	speechCallback(':tell', speechOutput, getRepromptText('keyword command'));
+// };
+
+function getRepromptText(prompt) {
+	return "I did not understand you, what " + process.env.SKILL_CALL_SIGN + prompt + " would you like to know?";
 };
 
 /** get the keyboard shortcut */
 function getKeyboardShortcut(intent, speechCallback) {
-
 	var speechOutput = getSpeechOutput(intent.slots.OperationName.value);
 	speechCallback(':tell', speechOutput, getRepromptText());
 };

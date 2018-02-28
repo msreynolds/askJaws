@@ -27,6 +27,15 @@
       ]
     },
     {
+      "intent": "KeywordIntent",
+      "slots": [
+        {
+          "name": "KeywordName",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
       "intent": "SetPreferencesIntent",
       "slots": []
     },
