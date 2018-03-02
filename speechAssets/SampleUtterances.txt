@@ -28,7 +28,7 @@ KeyboardShortcutIntent What is the shortcut for {select language|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {select language|OperationName}
 KeyboardShortcutIntent What is the shortcut for {read column|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {read column|OperationName}
-KeywordIntent For the keyword {say|KeywordName}
+KeywordIntent What is the keyword for {say|KeywordName}
 KeywordIntent For the keyword {label|KeywordName}
 KeywordIntent For the keyword {language|KeywordName}
 KeywordIntent For the keyword {mouse|KeywordName}

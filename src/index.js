@@ -53,7 +53,8 @@ var handlers = {
 		getKeyboardShortcut(this.event.request.intent, this.emit);
 	},
 	'KeywordIntent': function () {
-		getKeyboardShortcut(this.event.request.intent, this.emit);
+		console.log('keyword list')
+		getKeywordList(this.event.request.intent, this.emit);
 	},
 	'SetPreferencesIntent': function () {
 		var speechOutput = "Ok, What layout preference do you prefer?  Please say 'laptop' or 'desktop'";
@@ -174,10 +175,10 @@ function getHelpResponse(speechCallback) {
 	speechCallback(':tell', speechOutput, getRepromptText('keyboard shortcut'));
 };
 
-/** get the keyboard shortcut */
+/** get the keyword list of options */
 function getKeywordList(intent, speechCallback) {
-	var speechOutput = getSpeechOutput(intent.slots.OperationName.value);
-	speechCallback(':tell', speechOutput, getRepromptText());
+	var speechOutput = getKeywordListItems(intent.slots.KeywordName.value);
+	speechCallback(':tell', speechOutput, getRepromptText('keyword'));
 };
 
 /* get a list of command options */
@@ -211,7 +212,7 @@ function getRepromptText(prompt) {
 /** get the keyboard shortcut */
 function getKeyboardShortcut(intent, speechCallback) {
 	var speechOutput = getSpeechOutput(intent.slots.OperationName.value);
-	speechCallback(':tell', speechOutput, getRepromptText());
+	speechCallback(':tell', speechOutput, getRepromptText('keyboard shortcut'));
 };
 
 /** returns the proper speech output */
