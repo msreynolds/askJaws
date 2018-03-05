@@ -50,10 +50,11 @@ var handlers = {
 		getHelpResponse(this.emit);
 	},
 	'KeyboardShortcutIntent': function () {
+		console.log('KeyboardShortcutIntent')
 		getKeyboardShortcut(this.event.request.intent, this.emit);
 	},
 	'KeywordIntent': function () {
-		console.log('keyword list')
+		console.log('KeywordIntent')
 		getKeywordList(this.event.request.intent, this.emit);
 	},
 	'SetPreferencesIntent': function () {
@@ -185,8 +186,10 @@ function getKeywordList(intent, speechCallback) {
 function getKeywordListItems(word) {
 	var keywords = [];
 	dataModel[`${version}`].forEach(function (item) {
-		return item.split(' ').some(function(w){
-			w === word ? keywords.push(item) : null;
+		const description = item['description'];
+		console.log('hitting item', description)
+		return description.split(' ').some(function(w){
+			w === word ? keywords.push(description + " ") : null;
 		})
 	})
 	return keywords;

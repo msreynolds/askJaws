@@ -14,12 +14,8 @@
   "request": {
     "intent": {
       "slots": {
-        "ActionName": {
-          "name": "ActionName",
-          "value": "say"
-        },
-        "ActionTarget": {
-          "name": "ActionTarget",
+        "KeywordName": {
+          "name": "KeywordName",
           "value": "line"
         }
       },
