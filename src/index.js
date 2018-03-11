@@ -217,9 +217,9 @@ function getDescriptionResponse(descriptions, word) {
     return "I did not find any descriptions that contain " + word;
   return (
     "I found " +
-    (descriptions.length === 1 ? " description" : " descriptions") +
+    (descriptions.length > 1 ? " descriptions" : " description") +
     " that " +
-    (descriptions.length === 1 ? " contains" : " contain") +
+    (descriptions.length > 1 ? " contain" : " contains") +
     word +
     ": " +
     descriptions
