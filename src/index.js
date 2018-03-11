@@ -200,27 +200,26 @@ function getDescriptionList(intent, speechCallback) {
 }
 
 /* get a list of command options */
-function getDescriptionListItems(word) {
+function getDescriptionListItems(words) {
   var descriptions = [];
-  console.log("hitting descriptions length: ", dataModel[`${version}`].length);
   dataModel[`${version}`].forEach(function(item) {
     const description = item["description"];
     console.log("hitting item", description);
-    return description.split(" ").some(function(w) {
-      w === word ? descriptions.push(description + " ") : null;
-    });
+    if (description.indexOf(words) > -1) {
+        descriptions.push(description);
+    }
   });
-  return getDescriptionResponse(descriptions, word);
+  return getDescriptionResponse(descriptions, words);
 }
 
 function getDescriptionResponse(descriptions, word) {
   if (!descriptions.length)
     return "I did not find any descriptions that contain " + word;
   return (
-    "I found " +
+    "I found " + descriptions.length +
     (descriptions.length > 1 ? " descriptions" : " description") +
     " that " +
-    (descriptions.length > 1 ? " contain" : " contains") +
+    (descriptions.length > 1 ? "contain " : " contains") +
     word +
     ": " +
     descriptions
