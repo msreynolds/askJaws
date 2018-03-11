@@ -209,7 +209,7 @@ function getDescriptionListItems(word) {
       w === word ? descriptions.push(description + " ") : null;
     });
   });
-  return getDescriptionResponse(descriptions);
+  return getDescriptionResponse(descriptions, word);
 }
 
 function getDescriptionResponse(descriptions, word) {
