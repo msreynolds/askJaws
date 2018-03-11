@@ -216,7 +216,9 @@ function getDescriptionResponse(descriptions, word) {
   if (!descriptions.length)
     return "I did not find any descriptions that contain " + word;
   return (
-    "I found the following descriptions match your keyword that contain " +
+    "I found " +
+    (descriptions.length === 1 ? " description" : " descriptions") +
+    " that contain " +
     word +
     ": " +
     descriptions
