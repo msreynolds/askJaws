@@ -214,10 +214,10 @@ function getDescriptionListItems(word) {
 
 function getDescriptionResponse(descriptions, word) {
   if (!descriptions.length)
-    return "I did not find any keyboard shortcuts for the keyword" + word;
+    return "I did not find any descriptions that contain " + word;
   if (descriptions.length === 1)
     return (
-      "The only description that matches your keyword" +
+      "The only description that matches your keyword " +
       word +
       "is " +
       descriptions
