@@ -50,11 +50,11 @@ var handlers = {
 		getHelpResponse(this.emit);
 	},
 	'KeyboardShortcutIntent': function () {
-		console.log('KeyboardShortcutIntent')
+		console.log('KeyboardShortcutIntent');
 		getKeyboardShortcut(this.event.request.intent, this.emit);
 	},
-	'KeywordIntent': function () {
-		console.log('KeywordIntent')
+	'DescriptionSearchIntent': function () {
+		console.log('DescriptionSearchIntent');
 		getKeywordList(this.event.request.intent, this.emit);
 	},
 	'SetPreferencesIntent': function () {
@@ -178,7 +178,7 @@ function getHelpResponse(speechCallback) {
 
 /** get the keyword list of options */
 function getKeywordList(intent, speechCallback) {
-	var speechOutput = getKeywordListItems(intent.slots.KeywordName.value);
+	var speechOutput = getKeywordListItems(intent.slots.OperationName.value);
 	speechCallback(':tell', speechOutput, getRepromptText('keyword'));
 };
 
@@ -187,11 +187,11 @@ function getKeywordListItems(word) {
 	var keywords = [];
 	dataModel[`${version}`].forEach(function (item) {
 		const description = item['description'];
-		console.log('hitting item', description)
+		console.log('hitting item', description);
 		return description.split(' ').some(function(w){
 			w === word ? keywords.push(description + " ") : null;
 		})
-	})
+	});
 	return keywords;
 }
 

@@ -28,10 +28,16 @@ KeyboardShortcutIntent What is the shortcut for {select language|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {select language|OperationName}
 KeyboardShortcutIntent What is the shortcut for {read column|OperationName}
 KeyboardShortcutIntent What is the keyboard shortcut for {read column|OperationName}
-KeywordIntent What is the keyword for {say|KeywordName}
-KeywordIntent For the keyword {label|KeywordName}
-KeywordIntent For the keyword {language|KeywordName}
-KeywordIntent For the keyword {mouse|KeywordName}
+DescriptionSearchIntent What descriptions contain {say|OperationName}
+DescriptionSearchIntent What descriptions contain {label|OperationName}
+DescriptionSearchIntent What descriptions contain {language|OperationName}
+DescriptionSearchIntent What descriptions contain {mouse|OperationName}
+DescriptionSearchIntent What descriptions contain {radio button|OperationName}
+DescriptionSearchIntent What operations contain {say|OperationName}
+DescriptionSearchIntent What operations contain {label|OperationName}
+DescriptionSearchIntent What operations contain {language|OperationName}
+DescriptionSearchIntent What operations contain {mouse|OperationName}
+DescriptionSearchIntent What operations contain {radio button|OperationName}
 SetPreferencesIntent Set preferences
 SetPreferencesIntent To set preferences
 SetPreferencesIntent To initialize preferences

@@ -1,68 +1,142 @@
 /**
- * Created by Matt Reynolds (matt@mtnlabs.com).
- * Mountain Labs, LLC 2017
+ * Created by Matt Reynolds (matt@mtnlabs.com) and Justin DeGonda.
+ * Mountain Labs, LLC 2018
  *
  * Project: ASKJaws
  * Plugin for the JAWS screen reader to ask for the keyboard shortcuts for all JAWs actions
  */
 
 {
-  "intents": [
-    {
-      "intent": "AMAZON.CancelIntent"
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "KeyboardShortcutIntent",
-      "slots": [
-        {
-          "name": "OperationName",
-          "type": "LITERAL"
-        }
-      ]
-    },
-    {
-      "intent": "KeywordIntent",
-      "slots": [
-        {
-          "name": "KeywordName",
-          "type": "KEYWORD"
-        }
-      ]
-    },
-    {
-      "intent": "SetPreferencesIntent",
-      "slots": []
-    },
-    {
-      "intent": "CaptureLayoutPreferenceIntent",
-      "slots": [
-        {
-          "name": "LayoutPreference",
-          "type": "LIST_OF_LAYOUTS"
-        }
-      ]
-    },
-    {
-      "intent": "CaptureJawsVersionIntent",
-      "slots": [
-        {
-          "name": "JawsVersion",
-          "type": "NUMBER"
-        }
-      ]
-    }
-  ]
+  "languageModel": {
+    "invocationName": "jaws",
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "slots": [],
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "slots": [],
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "slots": [],
+        "samples": []
+      },
+      {
+        "name": "DescriptionSearchIntent",
+        "slots": [
+          {
+            "name": "OperationName",
+            "type": "AMAZON.LITERAL"
+          }
+        ],
+        "samples": [
+          "DescriptionSearchIntent What descriptions contain {say|OperationName}",
+          "DescriptionSearchIntent What descriptions contain {label|OperationName}",
+          "DescriptionSearchIntent What descriptions contain {language|OperationName}",
+          "DescriptionSearchIntent What descriptions contain {mouse|OperationName}",
+          "DescriptionSearchIntent What descriptions contain {radio button|OperationName}"
+        ]
+      },
+      {
+        "name": "KeyboardShortcutIntent",
+        "slots": [
+          {
+            "name": "OperationName",
+            "type": "AMAZON.LITERAL"
+          }
+        ],
+        "samples": [
+          "What is the shortcut for {acquire image from camera or scanner|OperationName}",
+          "What is the keyboard shortcut for {acquire image from camera or scanner|OperationName}",
+          "What is the shortcut for {acquire image from camera|OperationName}",
+          "What is the keyboard shortcut for {acquire image from camera|OperationName}",
+          "What is the shortcut for {acquire image from scanner|OperationName}",
+          "What is the keyboard shortcut for {acquire image from scanner|OperationName}",
+          "What is the shortcut for {activate mouse over|OperationName}",
+          "What is the keyboard shortcut for {activate mouse over|OperationName}",
+          "What is the shortcut for {assign custom label|OperationName}",
+          "What is the keyboard shortcut for {assign custom label|OperationName}",
+          "What is the shortcut for {read column|OperationName}",
+          "What is the keyboard shortcut for {read column|OperationName}",
+          "What is the shortcut for {read row|OperationName}",
+          "What is the keyboard shortcut for {read row|OperationName}",
+          "What is the shortcut for {say line|OperationName}",
+          "What is the keyboard shortcut for {say line|OperationName}",
+          "What is the shortcut for {say from cursor|OperationName}",
+          "What is the keyboard shortcut for {say from cursor|OperationName}",
+          "What is the shortcut for {say font|OperationName}",
+          "What is the keyboard shortcut for {say font|OperationName}",
+          "What is the shortcut for {say color|OperationName}",
+          "What is the keyboard shortcut for {say color|OperationName}",
+          "What is the shortcut for {say character|OperationName}",
+          "What is the keyboard shortcut for {say character|OperationName}",
+          "What is the shortcut for {say word|OperationName}",
+          "What is the keyboard shortcut for {say word|OperationName}",
+          "What is the shortcut for {select language|OperationName}",
+          "What is the keyboard shortcut for {select language|OperationName}",
+          "What is the shortcut for {read column|OperationName}",
+          "What is the keyboard shortcut for {read column|OperationName}"
+        ]
+      },
+      {
+        "name": "SetPreferencesIntent",
+        "slots": [],
+        "samples": [
+          "Set preferences",
+          "To set preferences",
+          "To initialize preferences",
+          "Initialize preferences",
+          "To initialize",
+          "Initialize"
+        ]
+      },
+      {
+        "name": "CaptureLayoutPreferenceIntent",
+        "slots": [
+          {
+            "name": "LayoutPreference",
+            "type": "LIST_OF_LAYOUTS"
+          }
+        ],
+        "samples": [
+          "{LayoutPreference}",
+          "{LayoutPreference}"
+        ]
+      },
+      {
+        "name": "CaptureJawsVersionIntent",
+        "slots": [
+          {
+            "name": "JawsVersion",
+            "type": "AMAZON.NUMBER"
+          }
+        ]
+      }
+    ],
+    "types": [
+      {
+        "name": "LIST_OF_LAYOUTS",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "desktop",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "laptop",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
-
-/**
- * Custom Slot Values
- * LIST_OF_LAYOUTS
- * desktop
- * laptop
-*/
