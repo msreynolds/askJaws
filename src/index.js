@@ -202,6 +202,7 @@ function getDescriptionList(intent, speechCallback) {
 /* get a list of command options */
 function getDescriptionListItems(word) {
   var descriptions = [];
+  console.log("hitting descriptions length: ", dataModel[`${version}`].length);
   dataModel[`${version}`].forEach(function(item) {
     const description = item["description"];
     console.log("hitting item", description);
