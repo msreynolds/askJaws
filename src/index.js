@@ -91,15 +91,15 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(
         this.response.speak(speechOutput);
 
         // TODO: write preferences to DynamoDB
-        // speechOutput += "  Your preferences have been saved.";
+        // speechOutput += '  Your preferences have been saved.';
 
         this.emit(":responseReady");
 
         // TODO: Go to next preference, if there are any (ex. Set Jaws Version)
-        // var speechOutput = "Ok.";
-        // var nextPreference = "What jaws version are you using?  Please say '17' or '18'";
+        // var speechOutput = 'Ok.';
+        // var nextPreference = 'What jaws version are you using?  Please say '17' or '18'';
         // this.handler.state = states.JAWS_VERSION_MODE;
-        // this.response.speak(speechOutput + " " + nextPreference).listen("Please say '17' or '18'");
+        // this.response.speak(speechOutput + ' ' + nextPreference).listen('Please say '17' or '18'');
         // this.emit(':responseReady');
       }
     },
@@ -124,7 +124,7 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(
     Unhandled: function() {
       console.log("Unhandled:");
       this.response
-        .speak("Please say 'laptop' or 'desktop'")
+        .speak("'Please say 'laptop' or 'desktop'")
         .listen("Please say 'laptop' or 'desktop'");
       this.emit(":responseReady");
     }
@@ -134,14 +134,14 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(
 // var setJawsVersionHandlers = Alexa.CreateStateHandler(states.JAWS_VERSION_MODE, {
 //     'CaptureJawsVersionIntent': function () {
 //         var jawsVersion = this.event.request.intent.slots.JawsVersion.value;
-//         this.attributes["jawsVersion"] = jawsVersion;
+//         this.attributes['jawsVersion'] = jawsVersion;
 //
-//         var speechOutput = "Ok.";
-//         speechOutput += "  Your layout preference is: " + this.attributes['layoutPreference'] + ".";
-//         speechOutput += "  Your jaws version is: " + this.attributes['jawsVersion'] + ".";
+//         var speechOutput = 'Ok.';
+//         speechOutput += '  Your layout preference is: ' + this.attributes['layoutPreference'] + '.';
+//         speechOutput += '  Your jaws version is: ' + this.attributes['jawsVersion'] + '.';
 //
 //         // TODO: write preferences to DynamoDB
-//         speechOutput += "  Your preferences have been saved.";
+//         speechOutput += '  Your preferences have been saved.';
 //
 //         this.response.speak(speechOutput);
 //         this.emit(':responseReady');
@@ -165,7 +165,7 @@ var setLayoutPreferenceHandlers = Alexa.CreateStateHandler(
 //         this.handler.state = '';
 //     },
 //     'Unhandled': function() {
-//         console.log("UNHANDLED");
+//         console.log('UNHANDLED');
 //         this.handler.state = '';
 //         this.emit(':tell', 'I have encountered an unhandled request in the set jaws version handlers.');
 //     }
@@ -209,30 +209,36 @@ function getDescriptionListItems(word) {
       w === word ? descriptions.push(description + " ") : null;
     });
   });
-  return descriptions;
+  return getDescriptionResponse(descriptions);
 }
 
-function getDescriptionResponse(description, word) {
-  var descriptionList = getDescriptionListItems(description);
-  if (descriptionList.length <= 5)
+function getDescriptionResponse(descriptions, word) {
+  if (!descriptions.length)
+    return "I did not find any keyboard shortcuts for the keyword" + word;
+  if (descriptions.length === 1)
     return (
-      "I found the following operations you can use to get keyboard command that contain the word " +
+      "The only description that matches your keyword" +
       word +
-      " ... " +
-      descriptionList
+      "is " +
+      descriptions
     );
-  if (descriptionList.length > 5)
-    return (
-      "there are more then 5 operations available that contain the word " +
-      word +
-      " are you sure you would like to here them all?"
-    );
-  return "I did not find any keyboard shortcuts that contain the word " + word;
+  return (
+    "I found the following descriptions match your keyword " +
+    word +
+    ": " +
+    descriptions
+  );
+  // if (descriptionList.length > 5)
+  //   return (
+  //     "there are more then 5 operations available that contain the word " +
+  //     word +
+  //     " are you sure you would like to here them all?"
+  //   );
 }
 
 // /** help get a list of command options */
 // function getDescriptionListHelp(speechCallback) {
-// 	var speechOutput = "You can ask " + process.env.SKILL_CALL_SIGN + " for a list of command descriptions available to ask.";
+// 	var speechOutput = 'You can ask ' + process.env.SKILL_CALL_SIGN + ' for a list of command descriptions available to ask.';
 // 	speechCallback(':tell', speechOutput, getRepromptText('keyword command'));
 // };
 
