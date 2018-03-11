@@ -206,7 +206,7 @@ function getDescriptionListItems(words) {
     const description = item["description"];
     console.log("hitting item", description);
     if (description.indexOf(words) > -1) {
-        descriptions.push(description);
+        descriptions.push(" " + description);
     }
   });
   return getDescriptionResponse(descriptions, words);
