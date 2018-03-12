@@ -34,11 +34,21 @@
           }
         ],
         "samples": [
+          "DescriptionSearchIntent What commands contain {say|OperationName}",
+          "DescriptionSearchIntent What commands contain {label|OperationName}",
+          "DescriptionSearchIntent What commands contain {language|OperationName}",
+          "DescriptionSearchIntent What commands contain {mouse|OperationName}",
+          "DescriptionSearchIntent What commands contain {radio button|OperationName}",
           "DescriptionSearchIntent What descriptions contain {say|OperationName}",
           "DescriptionSearchIntent What descriptions contain {label|OperationName}",
           "DescriptionSearchIntent What descriptions contain {language|OperationName}",
           "DescriptionSearchIntent What descriptions contain {mouse|OperationName}",
-          "DescriptionSearchIntent What descriptions contain {radio button|OperationName}"
+          "DescriptionSearchIntent What descriptions contain {radio button|OperationName}",
+          "DescriptionSearchIntent Search for {say|OperationName}",
+          "DescriptionSearchIntent Search for {label|OperationName}",
+          "DescriptionSearchIntent Search for {language|OperationName}",
+          "DescriptionSearchIntent Search for {mouse|OperationName}",
+          "DescriptionSearchIntent Search for {radio button|OperationName}"
         ]
       },
       {
