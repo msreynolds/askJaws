@@ -183,7 +183,7 @@ function getWelcomeResponse(speechCallback) {
 /** help response */
 function getHelpResponse(speechCallback) {
   var speechOutput =
-    "You can ask " +
+    "Welcome to Justin and Matt's AskJaws demo. You can ask " +
     process.env.SKILL_CALL_SIGN +
     " for the keyboard shortcut for any operation. Or, get a list of command description options by asking ask Description List.";
   speechCallback(":tell", speechOutput, getRepromptText("keyboard shortcut"));
@@ -200,26 +200,24 @@ function getDescriptionList(intent, speechCallback) {
 }
 
 /* get a list of command options */
-function getDescriptionListItems(words) {
+function getDescriptionListItems(word) {
   var descriptions = [];
   dataModel[`${version}`].forEach(function(item) {
-    const description = item["description"];
+    const description = item['description'];
     console.log("hitting item", description);
-    if (description.indexOf(words) > -1) {
-        descriptions.push(" " + description);
-    }
+    return description.split(" ").some(function(w) {
+      w === word ? descriptions.push(description.indexOf[description > -1]) : null;
+    });
   });
-  return getDescriptionResponse(descriptions, words);
+  return getDescriptionResponse(descriptions, word);
 }
 
 function getDescriptionResponse(descriptions, word) {
   if (!descriptions.length)
     return "I did not find any descriptions that contain " + word;
   return (
-    "I found " + descriptions.length +
-    (descriptions.length > 1 ? " descriptions" : " description") +
-    " that " +
-    (descriptions.length > 1 ? "contain " : " contains") +
+    "I found " + descriptions.length > 1 ? (" descriptions" : " description") +
+    " that " + descriptions.length > 1 ? (" contain " : " contains ") +
     word +
     ": " +
     descriptions
