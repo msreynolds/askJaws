@@ -1,0 +1,64 @@
+    
+    
+    const promisify = require('es6-promisify');
+    const awsSDK = require('aws-sdk');
+    const dbClient = new awsSDK.DynamoDB.DocumentClient();
+
+    // convert callback style functions to promises
+    const dbScan = promisify(dbClient.scan, dbClient);
+    const dbGet = promisify(dbClient.get, dbClient);
+    const dbPut = promisify(dbClient.put, dbClient);
+    const dbDelete = promisify(dbClient.delete, dbClient);
+    
+    const preferencesTable = 'Preferences';
+    const { userId } = this.event.session.user;
+    const dynamoParams = {
+        TableName: preferencesTable,
+        FilterExpression: 'UserId = :user_id',
+        ExpressionAttributeValues: {':user_id': userId}
+    };
+
+    var layout = process.env.LAYOUT_MODE;
+
+    // Get Preferences
+    const getPreferences = {
+        TableName: preferencesTable,
+        Key: {
+            UserId: userId
+        }
+    };
+    console.log('Attempting to get preferences', getPreferences);
+    dbGet(getPreferences)
+        .then((data) => {
+            console.log('Get perferences succeeded', data);
+            const preference = data.Item;
+            if (preference) {
+                layout = preference.Layout;
+                console.log('Found preference: ', layout);
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            throw new Error(err);   
+        });
+
+
+    // Set Preferences  
+    const setPreferences = {
+      TableName: preferencesTable,
+      Item: {
+        Layout: layout,
+        UserId: userId
+      }
+    };
+    console.log('Attempting to set preferences', setPreferences);
+    dbPut(setPreferences)
+        .then((data) => {
+            // Preference Save Success
+            console.log(data);
+        })
+        .catch((err) => {
+            // Preference Save Error
+            console.log(err);
+            throw new Error(err);
+        });

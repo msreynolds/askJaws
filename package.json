@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.207.0",
+    "es6-promisify": "^6.0.0"
+  }
+}
