@@ -182,11 +182,13 @@ function getWelcomeResponse(speechCallback) {
 
 /** help response */
 function getHelpResponse(speechCallback) {
-  var speechOutput =
-    "You can ask " +
-    process.env.SKILL_CALL_SIGN +
-    " for the keyboard shortcut for any operation. Or, get a list of command description options by asking ask Description List.";
-  speechCallback(":tell", speechOutput, getRepromptText("keyboard shortcut"));
+    var speechOutput =
+        "You can say to " +
+        process.env.SKILL_CALL_SIGN +
+        ": Set Preferences, to edit your preferences.  " +
+        "What is the shortcut for x, where x is a command, " +
+        "Or, What commands contain x, where x is a key word.";
+    speechCallback(":tell", speechOutput, getRepromptText("keyboard shortcut"));
 }
 
 /** get the description list of options */
