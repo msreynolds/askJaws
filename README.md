@@ -11,8 +11,29 @@ URL: https://github.com/msreynolds/askjaws
 
 Usage:
 ```
-echo user: "Alexa, ask jaws What is the keyboard shortcut for 'say line'"
+User: "Alexa, Ask Jaws to Set Preferences"
+Alexa: "Ok, what layout preference do you prefer?  Please say laptop or desktop"
+
+User: "Alexa, Ask Jaws: What’s the shortcut for ‘say line’"
 Alexa: "They keyboard shortcut for 'say line' is INSERT + UP ARROW"
+
+User: "Alexa, Ask Jaws: What’s the shortcut for ‘say time’"
+Alexa: "They keyboard shortcut for 'say line' is INSERT + UP ARROW" (this is due to the Levenstein search implementation.  There is no command for 'say time' so it finds the next closest match)
+
+User: "Alexa, Ask Jaws: What commands contain ‘time’"
+Alexa: "I found one command that contains 'time', 'say system time'"
+
+User: "Alexa, Ask Jaws: What’s the shortcut for ‘say system time’"
+Alexa: "The keyboard shortcut for 'say system time' is ALT + NUM PAD 5"
+
+User: "Alexa, Ask Jaws: What’s the shortcut for ‘acquire image from scanner or camera’"
+Alexa: "The keyboard shortcut for 'acquire image from camera or scanner' is INSERT+SPACEBAR, followed by O, and then A"
+
+User: "Alexa, Ask Jaws: What commands contain ‘radio button’"
+Alexa: "I found 4 commands that contain 'radio button' ... then she reads the 4 commands found"
+
+User: "Alexa, Ask Jaws: What’s the shortcut for ‘next radio button’"
+Alexa: "The keyboard shortcut for 'next radio button' is A"
 ```
 
 Instructions:
@@ -34,9 +55,6 @@ SKILL_CALL_SIGN="jaws"
 
 # Amazon Configuration
 AMAZON_ALEXA_APP_ID="amzn1.enter.ask.skill.alexa.ID"
-
-# Verbose Mode
-VERBOSE_MODE="false"
 
 # Layout Mode (desktop or laptop)
 LAYOUT_MODE="desktop"
